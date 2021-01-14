@@ -3,6 +3,7 @@
 #include <boost/tuple/tuple_comparison.hpp>
 #include <boost/bind.hpp>
 #include<iostream>
+#include "boost_test.h"
 
 /* keys:
 boost::tuple
@@ -21,7 +22,7 @@ using boost::bind;
 
 void test_ref()
 {
-    
+
 }
 
 
@@ -58,4 +59,5 @@ void test_boost(void)
     std::cout<<"Test boost begin"<<std::endl;
     test_tuple();
     test_bind();
+    test_multi_index_container();
 }
