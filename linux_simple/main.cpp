@@ -8,30 +8,30 @@
 using namespace std;
 
 /*
-compile command:g++ -std=c++17 main.cpp -o main
+compile command:g++ -std=c++17 main.cpp -o test
 */
-//#include <boost/asio.hpp>
-//#include <boost/thread.hpp>
-//#include <boost/date_time/posix_time/posix_time.hpp>
+#include <boost/asio.hpp>
+#include <boost/thread.hpp>
+#include <boost/date_time/posix_time/posix_time.hpp>
 using namespace std;
 
 
-// void Print(const boost::system::error_code &ec)
-// {
-//     cout<<"Hello World!"<<endl;
-//     cout<<boost::this_thread::get_id()<<endl;
-// }
+void Print(const boost::system::error_code &ec)
+{
+    cout<<"Hello World!"<<endl;
+    cout<<boost::this_thread::get_id()<<endl;
+}
 int asio_test()
 {
-    // cout<<"asio test start."<<endl;
-    // cout<<boost::this_thread::get_id()<<endl;
-    // boost::asio::io_service io;
-    // boost::asio::deadline_timer t(io, boost::posix_time::seconds(5));
+    cout<<"asio test start."<<endl;
+    cout<<boost::this_thread::get_id()<<endl;
+    boost::asio::io_service io;
+    boost::asio::deadline_timer t(io, boost::posix_time::seconds(5));
 
-    // t.async_wait(Print);
-    // cout<<"to run"<<endl;
-    // io.run();
-    // cout<<"exit"<<endl;
+    t.async_wait(Print);
+    cout<<"to run"<<endl;
+    io.run();
+    cout<<"exit"<<endl;
     return 0;
 }
 
@@ -54,5 +54,6 @@ int main(void)
     cout<<"a="<<a.value()<<endl;
     cout<<"b="<<b<<endl;
     test_tuple();
+    asio_test();
     return 0;
 }
