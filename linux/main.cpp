@@ -7,6 +7,8 @@
 
 using namespace std;
 
+extern void test_std();
+
 class database
 {
     public:
@@ -25,4 +27,5 @@ int main(void)
     cout<<"Hello world3!"<<endl;
     cout<<"Hello world4!"<<endl;
     test_boost();
+    test_std();
 }

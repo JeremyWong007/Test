@@ -4,7 +4,7 @@ PROJECT(TEST)
 
 #自己定制
 SET(MY_TARGET test)
-SET(MY_LINK boost_test)
+SET(MY_LINK boost_test stl_test)
 
 #设置编译器
 SET(CMAKE_CXX_COMPILER "g++")
@@ -12,6 +12,9 @@ SET(CMAKE_CXX_COMPILER "g++")
 MESSAGE(STATUS "This is BINARY dir " ${TEST_BINARY_DIR})
 MESSAGE(STATUS "This is SOURCE dir " ${TEST_SOURCE_DIR})
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 #设置构建类型，及相应的编译选项
 SET(CMAKE_BUILD_TYPE "Debug")
@@ -30,6 +33,7 @@ MESSAGE("++++++++++++++Start Build+++++++++++++++++")
 AUX_SOURCE_DIRECTORY(. SRC_LIST)
 #添加子目录
 ADD_SUBDIRECTORY(boost_test)
+ADD_SUBDIRECTORY(stl_test)
 
 #头文件搜索目录
 INCLUDE_DIRECTORIES(/home/yanfa-1/eosio/2.0/src/boost_1_71_0/include/)
