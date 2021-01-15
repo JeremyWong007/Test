@@ -35,15 +35,20 @@ AUX_SOURCE_DIRECTORY(. SRC_LIST)
 ADD_SUBDIRECTORY(boost_test)
 ADD_SUBDIRECTORY(stl_test)
 
+set(Boost_INCLUDE_DIR /usr/local/include)
+set(Boost_LIBRARY_DIR /usr/local/lib)
+find_package(Boost COMPONENTS system filesystem thread REQUIRED)
+
 #头文件搜索目录
-INCLUDE_DIRECTORIES(/home/yanfa-1/eosio/2.0/src/boost_1_71_0/include/)
+include_directories(${Boost_INCLUDE_DIR})
 
 #链接库搜索路径
-LINK_DIRECTORIES(lib)
+#LINK_DIRECTORIES(lib /home/yanfa-1/eosio/2.0/src/boost_1_71_0/lib)
+link_directories(lib ${Boost_LIBRARY_DIR})
 #设置链接库
 SET(EXTRA_LIBS ${EXTRA_LIBS} ${MY_LINK})
 
 #生成可执行文件
 ADD_EXECUTABLE(${MY_TARGET} ${SRC_LIST})
 #执行文件链接属性
-TARGET_LINK_LIBRARIES(${MY_TARGET} ${EXTRA_LIBS})
+TARGET_LINK_LIBRARIES(${MY_TARGET} ${EXTRA_LIBS} ${Boost_LIBRARIES})

@@ -20,6 +20,8 @@ boost.ref应用代理模式，引入对象引用的包装器概念解决了这�
 using namespace std;
 using boost::bind;
 
+extern int asio_test();
+
 void test_ref()
 {
 
@@ -60,4 +62,5 @@ void test_boost(void)
     test_tuple();
     test_bind();
     test_multi_index_container();
+    asio_test();
 }
