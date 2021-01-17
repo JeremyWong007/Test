@@ -3,7 +3,7 @@ CMAKE_MINIMUM_REQUIRED( VERSION 3.8 )
 PROJECT(TEST)
 
 #自己定制
-SET(MY_TARGET test)
+SET(MY_TARGET test1)
 SET(MY_LINK boost_test stl_test)
 
 #设置编译器
