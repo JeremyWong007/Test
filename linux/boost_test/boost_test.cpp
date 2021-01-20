@@ -62,5 +62,5 @@ void test_boost(void)
     test_tuple();
     test_bind();
     test_multi_index_container();
-    asio_test();
+    //asio_test();
 }
