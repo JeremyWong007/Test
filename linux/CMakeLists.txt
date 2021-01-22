@@ -4,7 +4,7 @@ PROJECT(TEST)
 
 #自己定制
 SET(MY_TARGET test1)
-SET(MY_LINK boost_test stl_test)
+SET(MY_LINK boost_test stl_test sundries_test)
 
 #设置编译器
 SET(CMAKE_CXX_COMPILER "g++")
@@ -34,6 +34,7 @@ AUX_SOURCE_DIRECTORY(. SRC_LIST)
 #添加子目录
 ADD_SUBDIRECTORY(boost_test)
 ADD_SUBDIRECTORY(stl_test)
+ADD_SUBDIRECTORY(sundries)
 
 set(Boost_INCLUDE_DIR /usr/local/include)
 set(Boost_LIBRARY_DIR /usr/local/lib)

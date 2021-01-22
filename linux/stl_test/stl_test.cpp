@@ -5,6 +5,70 @@
 
 using namespace std;
 
+struct teststring{
+    public:
+    uint64_t value;
+    teststring(uint64_t v):value(v){};
+
+    /**
+     *  Returns the length of the %name
+     */
+    constexpr uint8_t length()const {
+        constexpr uint64_t mask = 0xF800000000000000ull;
+
+        if( value == 0 )
+        return 0;
+
+        uint8_t l = 0;
+        uint8_t i = 0;
+        for( auto v = value; i < 13; ++i, v <<= 5 ) {
+        if( (v & mask) > 0 ) {
+            l = i;
+        }
+        }
+
+        return l + 1;
+    }
+
+    char* write_as_string( char* begin, char* end, bool dry_run = false )const {
+         static const char* charmap = ".12345abcdefghijklmnopqrstuvwxyz";
+         constexpr uint64_t mask = 0xF800000000000000ull;
+
+         if( dry_run || (begin + 13 < begin) || (begin + 13 > end) ) {
+            char* actual_end = begin + length();
+            if( dry_run || (actual_end < begin) || (actual_end > end) ) return actual_end;
+         }
+
+         auto v = value;
+         for( auto i = 0; i < 13; ++i, v <<= 5 ) {
+            if( v == 0 ) return begin;
+
+            auto indx = (v & mask) >> (i == 12 ? 60 : 59);
+            *begin = charmap[indx];
+            ++begin;
+         }
+
+         return begin;
+      }
+
+      /**
+       *  Returns the name as a string.
+       *
+       *  @brief Returns the name value as a string by calling write_as_string() and returning the buffer produced by write_as_string()
+       */
+      std::string to_string()const {
+         char buffer[13];
+         auto end = write_as_string( buffer, buffer + sizeof(buffer) );
+         return {buffer, end};
+      }
+};
+void test_string()
+{
+    cout<<"test string start"<<endl;
+    teststring ts(1122334455);
+    cout<<ts.to_string()<<endl;
+}
+
 void test_lambda()
 {
     cout<<"test lambda start."<<endl;
@@ -60,4 +124,5 @@ void test_std()
     test_smartptr();
     test_variant();
     test_lambda();
+    test_string();
 }
