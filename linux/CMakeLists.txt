@@ -53,3 +53,13 @@ SET(EXTRA_LIBS ${EXTRA_LIBS} ${MY_LINK})
 ADD_EXECUTABLE(${MY_TARGET} ${SRC_LIST})
 #执行文件链接属性
 TARGET_LINK_LIBRARIES(${MY_TARGET} ${EXTRA_LIBS} ${Boost_LIBRARIES})
+
+install (TARGETS ${MY_TARGET} DESTINATION bin)
+#install (FILES "boost_test/boost_test.h" DESTINATION include)
+
+# 启用测试
+enable_testing()
+
+# 测试程序是否成功运行
+add_test (test_run ${MY_TARGET} 5 2)
+add_test (test_usage  ${MY_TARGET} 3 2)
