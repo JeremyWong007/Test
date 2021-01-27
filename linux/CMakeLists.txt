@@ -63,3 +63,17 @@ enable_testing()
 # 测试程序是否成功运行
 add_test (test_run ${MY_TARGET} 5 2)
 add_test (test_usage  ${MY_TARGET} 3 2)
+
+
+add_definitions(-DTEST_IN_LINUX)
+set(SAYHELLO "sdf")
+add_definitions(-DSHOWSTR="${SAYHELLO}")
+
+set(TEST_ON 1)
+set(TEST_OF 0)
+set(VAR "010")
+# 加入一个配置头文件，用于处理 CMake 对源码的设置
+configure_file (
+  "${CMAKE_CURRENT_SOURCE_DIR}/config.h.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/config.h"
+)

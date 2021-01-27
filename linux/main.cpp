@@ -49,4 +49,10 @@ int main(void)
     test_std();
     sundries_test();
     tmp_test();
+    #ifdef SHOWSTR
+        cout<<"In TEST_IN_LINUX"<<endl;
+    #else
+        cout<<"Not in TEST_IN_LINUX"<<endl;
+    #endif
+    cout<<SHOWSTR<<endl;
 }
