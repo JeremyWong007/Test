@@ -5,6 +5,26 @@
 
 using namespace std;
 
+class Cars{
+    private:
+    int price=20;
+    friend class Drivers;
+};
+class Drivers{
+    Cars c;
+    public:
+    void show()
+    {
+        cout<<"Drivers price is"<<c.price<<endl;
+    }
+};
+
+void test_friend()
+{
+    cout<<"test friend start"<<endl;
+    Drivers d;
+    d.show();
+}
 struct teststring{
     public:
     uint64_t value;
@@ -125,4 +145,5 @@ void test_std()
     test_variant();
     test_lambda();
     test_string();
+    test_friend();
 }
