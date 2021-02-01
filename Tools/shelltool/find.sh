@@ -6,3 +6,5 @@ find . -depth -name '*test*' -execdir bash -c 'for f; do mv -i "$f" "${f//test/m
 find . -depth -name '*eos-vm-oc*' -execdir bash -c 'for f; do mv -i "$f" "${f//eos-vm-oc/taf-vm-oc}"; done' bash {} +
 find . -depth -name '*eos-vm*' -execdir bash -c 'for f; do mv -i "$f" "${f//eos-vm/taf-vm}"; done' bash {} +
 find . -depth -name '*eosio*' -execdir bash -c 'for f; do mv -i "$f" "${f//eosio/tafio}"; done' bash {} +
+find . -depth -name '*eos*' -execdir bash -c 'for f; do mv -i "$f" "${f//eos/taf}"; done' bash {} +
+find . -depth -name '*Eos*' -execdir bash -c 'for f; do mv -i "$f" "${f//Eos/Taf}"; done' bash {} +
