@@ -5,6 +5,7 @@
 #include<iostream>
 #include "boost_test.h"
 #include <boost/hana/fwd/if.hpp>
+#include <boost/algorithm/string.hpp>
 
 /* keys:
 boost::tuple
@@ -20,6 +21,40 @@ boost.ref应用代理模式，引入对象引用的包装器概念解决了这�
 */
 using namespace std;
 using boost::bind;
+
+struct name {
+private:
+    uint64_t value = 0;
+
+public:
+    constexpr explicit name( uint64_t v ) : value(v) {}
+    constexpr name() = default;
+
+    std::string to_string()const;
+};
+
+std::string name::to_string()const {
+    static const char* charmap = ".12345abcdefghijklmnopqrstuvwxyz";
+
+    std::string str(13,'.');
+
+    uint64_t tmp = value;
+    for( uint32_t i = 0; i <= 12; ++i ) {
+        char c = charmap[tmp & (i == 0 ? 0x0f : 0x1f)];
+        str[12-i] = c;
+        tmp >>= (i == 0 ? 4 : 5);
+    }
+
+    boost::algorithm::trim_right_if( str, []( char c ){ return c == '.'; } );
+    return str;
+}
+void test_eos_name()
+{
+    cout<<"test eos name start."<<endl;
+    name n(14526054933851013120);
+    name n2(6138663577826885632);
+    cout<<n.to_string()<<","<<n2.to_string()<<endl;
+}
 
 extern int asio_test();
 
@@ -69,4 +104,5 @@ void test_boost(void)
     test_bind();
     test_multi_index_container();
     //asio_test();
+    test_eos_name();
 }

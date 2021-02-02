@@ -5,6 +5,65 @@
 
 using namespace std;
 
+template<typename T1,typename T2,typename T3>
+void func1(T2 a){
+    cout<<"fucn1:"<<a<<endl;
+}
+
+template<typename T1,typename T2,typename T3>
+struct st1{
+    template<typename T4>
+    void func1(T4 a){
+        cout<<"fucn1:"<<a<<endl;
+    }
+};
+
+
+void test_template(){
+    cout<<"test template start"<<endl;
+    func1<int,int,int>(9);
+    st1<int,int,string> s1;
+    s1.template func1("tt");
+    s1.func1("HaHa");
+
+    /*
+    总结：
+    1 template的最后一个模板参数与函数入参相同时可以省略。如果不是最后一个参数，不可以省略。
+    2 .template告诉编译器后面的变量为模板。
+    */
+}
+
+namespace tafio {
+    string N1="N1_tafio";
+    namespace chain_apis {
+        using namespace tafio;
+        void test1(){
+            cout<<"test1"<<N1<<endl;
+        }
+        string N1="N1_tafio_chain_apis";
+        void test2()
+        {
+            cout<<"test2"<<N1<<endl;
+        }
+       
+    }
+}
+void test_namespace()
+{
+    cout<<"test namespce start."<<endl;
+    //cout<<"N1:"<<N1<<endl;
+    cout<<"tafio N1:"<<tafio::N1<<endl;
+    cout<<"chain_apis N1:"<<tafio::chain_apis::N1<<endl;
+    tafio::chain_apis::test1();
+    tafio::chain_apis::test2();
+    /*
+    总结：
+    宏与命名空间不相干。宏在预处理阶段处理，namespace在编译阶段生效
+    命名空间中可以using自己，相当于没有操作
+    可以定义using中已有的变量，定义前使用是的是using的变量，定义后使用的是定义的变量。
+    */
+}
+
 class Cars{
     private:
     int price=20;
@@ -146,4 +205,6 @@ void test_std()
     test_lambda();
     test_string();
     test_friend();
+    test_namespace();
+    test_template();
 }
