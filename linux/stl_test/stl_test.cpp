@@ -198,6 +198,7 @@ extern int test_smartptr();
 void test_std()
 {
     cout<<"test std start."<<endl;
+    std::cout<<"********************************************************************************************"<<std::endl;
     test_simple();
     test_optional();
     test_smartptr();

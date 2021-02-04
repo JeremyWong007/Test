@@ -100,6 +100,7 @@ void test_tuple()
 void test_boost(void)
 {
     std::cout<<"Test boost begin"<<std::endl;
+    std::cout<<"********************************************************************************************"<<std::endl;
     test_tuple();
     test_bind();
     test_multi_index_container();
