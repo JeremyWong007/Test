@@ -1,13 +1,13 @@
-#include <eosio/eosio.hpp>
+#include <tafio/tafio.hpp>
 
-//using namespace eosio;
+//using namespace tafio;
 
-class [[eosio::contract]] hello : public eosio::contract {
+class [[tafio::contract]] hello : public tafio::contract {
   public:
-      using eosio::contract::contract;
+      using tafio::contract::contract;
 
-      [[eosio::action]]
-      void hi( eosio::name user ) {
-         eosio::print( "Hello5, ", user);
+      [[tafio::action]]
+      void hi( tafio::name user ) {
+         tafio::print( "Hello7, ", user);
       }
 };
