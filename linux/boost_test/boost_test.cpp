@@ -6,6 +6,8 @@
 #include "boost_test.h"
 #include <boost/hana/fwd/if.hpp>
 #include <boost/algorithm/string.hpp>
+#include <boost/assert.hpp>
+#include <boost/static_assert.hpp>
 
 /* keys:
 boost::tuple
@@ -21,6 +23,15 @@ boost.ref应用代理模式，引入对象引用的包装器概念解决了这�
 */
 using namespace std;
 using boost::bind;
+
+void test_assert(void)
+{
+    BOOST_ASSERT(16==0x10);
+    //BOOST_ASSERT(16==0x11);
+    //BOOST_ASSERT_MSG(16==0x11,"calac error.");
+    BOOST_STATIC_ASSERT(16==0x10);
+    //BOOST_STATIC_ASSERT(16==0x11);
+}
 
 struct name {
 private:
@@ -106,4 +117,5 @@ void test_boost(void)
     test_multi_index_container();
     //asio_test();
     test_eos_name();
+    test_assert();
 }
