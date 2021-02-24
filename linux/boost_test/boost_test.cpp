@@ -24,6 +24,8 @@ boost.ref应用代理模式，引入对象引用的包装器概念解决了这�
 using namespace std;
 using boost::bind;
 
+extern int datetimer_test();
+
 void test_assert(void)
 {
     BOOST_ASSERT(16==0x10);
@@ -108,6 +110,7 @@ void test_tuple()
     auto tt=boost::make_tuple("Jerry",11,22,33);
     std::cout<<tt<<std::endl;
 }
+
 void test_boost(void)
 {
     std::cout<<"Test boost begin"<<std::endl;
@@ -118,4 +121,5 @@ void test_boost(void)
     //asio_test();
     test_eos_name();
     test_assert();
+    datetimer_test();
 }

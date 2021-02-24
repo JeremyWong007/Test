@@ -3,8 +3,8 @@ CMAKE_MINIMUM_REQUIRED( VERSION 3.8 )
 PROJECT(TEST)
 
 #自己定制
-SET(MY_TARGET test1)
-SET(MY_LINK boost_test stl_test sundries_test)
+SET(MY_TARGET data1)
+#SET(MY_LINK boost_test stl_test sundries_test)
 
 #设置编译器
 SET(CMAKE_CXX_COMPILER "g++")
@@ -17,8 +17,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 #设置构建类型，及相应的编译选项
-#SET(CMAKE_BUILD_TYPE "Debug")
-SET(CMAKE_BUILD_TYPE "Release")
+SET(CMAKE_BUILD_TYPE "Debug")
+#SET(CMAKE_BUILD_TYPE "Release")
 SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
 SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall -DNDEBUG")
 
@@ -33,13 +33,10 @@ MESSAGE("++++++++++++++Start Build+++++++++++++++++")
 #当前目录的文件
 AUX_SOURCE_DIRECTORY(. SRC_LIST)
 #添加子目录
-ADD_SUBDIRECTORY(boost_test)
-ADD_SUBDIRECTORY(stl_test)
-ADD_SUBDIRECTORY(sundries)
 
 set(Boost_INCLUDE_DIR /usr/local/include)
 set(Boost_LIBRARY_DIR /usr/local/lib)
-find_package(Boost COMPONENTS system filesystem thread date_time REQUIRED)
+find_package(Boost COMPONENTS date_time REQUIRED)
 
 #头文件搜索目录
 include_directories(${Boost_INCLUDE_DIR})
@@ -73,8 +70,3 @@ add_definitions(-DSHOWSTR="${SAYHELLO}")
 set(TEST_ON 1)
 set(TEST_OF 0)
 set(VAR "010")
-# 加入一个配置头文件，用于处理 CMake 对源码的设置
-configure_file (
-  "${CMAKE_CURRENT_SOURCE_DIR}/config.h.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/config.h"
-)
