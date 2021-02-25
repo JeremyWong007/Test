@@ -28,11 +28,13 @@ extern int datetimer_test();
 
 void test_assert(void)
 {
+    cout<<"test assert start"<<endl;
     BOOST_ASSERT(16==0x10);
-    //BOOST_ASSERT(16==0x11);
+    BOOST_ASSERT(true);
     //BOOST_ASSERT_MSG(16==0x11,"calac error.");
     BOOST_STATIC_ASSERT(16==0x10);
-    //BOOST_STATIC_ASSERT(16==0x11);
+    BOOST_STATIC_ASSERT(true);
+    cout<<"true is"<<true<<"false is"<<false<<endl;
 }
 
 struct name {
@@ -115,11 +117,11 @@ void test_boost(void)
 {
     std::cout<<"Test boost begin"<<std::endl;
     std::cout<<"********************************************************************************************"<<std::endl;
-    test_tuple();
-    test_bind();
-    test_multi_index_container();
+    //test_tuple();
+    //test_bind();
+    //test_multi_index_container();
     //asio_test();
-    test_eos_name();
+    //test_eos_name();
     test_assert();
-    datetimer_test();
+    //datetimer_test();
 }
