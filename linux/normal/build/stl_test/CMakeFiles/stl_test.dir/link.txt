@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libstl_test.a  CMakeFiles/stl_test.dir/smartptr_test.cpp.o CMakeFiles/stl_test.dir/stl_test.cpp.o
+/usr/bin/ranlib ../../lib/libstl_test.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libsundries_test.a  CMakeFiles/sundries_test.dir/sundries_test.cpp.o
+/usr/bin/ranlib ../../lib/libsundries_test.a
