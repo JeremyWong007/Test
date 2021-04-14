@@ -1,4 +1,2 @@
 .vscode/
-linux/build/
-linux/lib/
-linux_simple/build/
+linux/normal/build/

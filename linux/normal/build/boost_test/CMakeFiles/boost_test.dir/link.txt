@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../lib/libboost_test.a  CMakeFiles/boost_test.dir/asio_test.cpp.o CMakeFiles/boost_test.dir/boost_test.cpp.o CMakeFiles/boost_test.dir/datetimer_test.cpp.o CMakeFiles/boost_test.dir/test_multi_index_container.cpp.o
-/usr/bin/ranlib ../../lib/libboost_test.a
