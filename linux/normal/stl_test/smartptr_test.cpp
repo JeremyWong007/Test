@@ -1,6 +1,23 @@
 #include <memory>
 #include <iostream>
 
+using namespace std;
+
+class Tiger{
+    public:
+    Tiger(){}
+    ~Tiger(){}
+    void say(){
+        cout<<"This is tiger"<<endl;
+    }
+};
+
+void test_unique_ptr()
+{
+    auto uptr=make_unique<Tiger>();
+    uptr->say();
+}
+
 class Bad
 {
 public:
@@ -33,11 +50,12 @@ int test_smartptr()
 {
     std::cout<<"test ptr start"<<std::endl;
     //test_smartptr_bad();
-    {
-        std::shared_ptr<Good> gp1(new Good());
-        std::shared_ptr<Good> gp2 = gp1->getptr();
-        // 打印gp1和gp2的引用计数
-        std::cout << "gp1.use_count() = " << gp1.use_count() << std::endl;
-        std::cout << "gp2.use_count() = " << gp2.use_count() << std::endl;
-    }
+    // {
+    //     std::shared_ptr<Good> gp1(new Good());
+    //     std::shared_ptr<Good> gp2 = gp1->getptr();
+    //     // 打印gp1和gp2的引用计数
+    //     std::cout << "gp1.use_count() = " << gp1.use_count() << std::endl;
+    //     std::cout << "gp2.use_count() = " << gp2.use_count() << std::endl;
+    // }
+    test_unique_ptr();
 }

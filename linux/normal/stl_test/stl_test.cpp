@@ -15,16 +15,86 @@ namespace bfs = boost::filesystem;
 
 using namespace std;
 
+class time_point{
+    public:
+    operator string()const;
+    private:
+    int microsecond=11;
+};
+
+time_point::operator string()const{
+    return(to_string(microsecond));
+}
+
+void test_operator(){
+    cout<<"test operator start."<<endl;
+    time_point t;
+    cout<<"microsecond is: "<<string(t)<<endl;
+
+}
+
+class wife;
+class husband;
+class family{
+private:
+    string house="wangke";
+    string car="dazhong";
+    friend class wife;
+    friend class husband;
+};
+class wife{
+    public:
+    void myhouse(family f){
+        cout<<"wife in "<<f.house<<endl;
+    }
+    void mycar(family f){
+        cout<<f.car;
+    }
+};
+
+class husband{
+    public:
+    void myhouse(family f){
+        cout<<"husband in "<<f.house<<endl;
+    }
+    void mycar(family f){
+        cout<<f.car;
+    }
+};
+
+
+void test_friend(){
+    cout<<"friend start."<<endl;
+    family f;
+    husband m;
+    wife w;
+    m.myhouse(f);
+    w.myhouse(f);
+}
+
+#include <limits>
+void test_numeric_limits()
+{
+    cout<<"test numeric_limits start"<<endl;
+    cout<<"double:"<<numeric_limits<double>::max()<<endl;
+    cout<<"float:"<<numeric_limits<float>::max()<<endl;
+    cout<<"int:"<<numeric_limits<int>::max()<<endl;
+    cout<<"int16:"<<numeric_limits<int16_t>::max()<<endl;
+    cout<<"uint16:"<<numeric_limits<uint16_t>::max()<<endl;
+    cout<<"int64:"<<numeric_limits<int64_t>::max()<<endl;
+    int16_t tt = std::numeric_limits<int16_t>::min();
+    int32_t t32 = (int32_t)tt;
+    cout<<"blocks:"<<tt<<"   "<<t32<<endl;
+}
+
 using int16bye=int;
 using vectorv = vector<int>;
 struct name;
-
-
 bfs::path determine_home_directory()
 {
    bfs::path home;
    cout<<"getuid "<<getuid()<<endl;
-   struct passwd* pwd = getpwuid(getuid());
+   //struct passwd* pwd = getpwuid(getuid());
 //    if(pwd) {
 //       home = pwd->pw_dir;
 //       cout<<"pwd:"<<home.string();
@@ -100,12 +170,7 @@ void test_hash(void)
 {
     cout<<"test hash start"<<endl;
     string i="10";
-    uint64_t u64=11111111111;
-    hash<string> a;
-    size_t hv=a(i);
 
-    hash<uint64_t> hu64;
-    size_t shu64=hu64(u64);
 
     int16bye aa=10;
     std::cout<<"test using"<<aa<<std::endl;
@@ -207,26 +272,6 @@ void test_namespace()
     */
 }
 
-class Cars{
-    private:
-    int price=20;
-    friend class Drivers;
-};
-class Drivers{
-    Cars c;
-    public:
-    void show()
-    {
-        cout<<"Drivers price is"<<c.price<<endl;
-    }
-};
-
-void test_friend()
-{
-    cout<<"test friend start"<<endl;
-    Drivers d;
-    d.show();
-}
 struct teststring{
     public:
     uint64_t value;
@@ -342,13 +387,13 @@ void test_std()
 {
     cout<<"test std start."<<endl;
     std::cout<<"********************************************************************************************"<<std::endl;
+    test_numeric_limits();
     test_simple();
     test_optional();
     test_smartptr();
     test_variant();
     test_lambda();
     test_string();
-    test_friend();
     test_namespace();
     test_template();
     test_uint128();
@@ -356,4 +401,6 @@ void test_std()
     test_ofstream();
     test_sstream();
     test_path();
+    test_friend();
+    test_operator();
 }
