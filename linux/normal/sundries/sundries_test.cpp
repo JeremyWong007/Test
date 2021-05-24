@@ -9,7 +9,7 @@ void show_vector(vector<char> &v){
     std::cout<<"show:";
     for(auto c:v){
         uint8_t tmp=c;
-        std::cout<<std::hex<<std::setw(2)<<std::setfill('0')<<(uint64_t)tmp;
+        std::cout<<std::hex<<std::setw(2)<<std::setfill('0')<<(uint64_t)tmp<<std::dec;
     }
     std::cout<<std::endl;
 }
@@ -29,7 +29,8 @@ void test_fucptr(){
     auto it = [&]{
         cout<<"aa="<<aa;
         return aa;
-    }();
+    };
+    it();
     cout<<"end?"<<endl;
 }
 
@@ -47,10 +48,4 @@ void sundries_test()
     say(1,2,3);
     test_fucptr();
     test_show();
-
-    map<string,string> m;
-    m.insert(pair<string,string>("name","jack"));
-    m["sex"]="man";
-    //m.insert("sex","man");
-    cout<<"name:"<<m["name"]<<"sex:"<<m["sex"]<<endl;
 }

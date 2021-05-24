@@ -10,10 +10,93 @@
 #include <boost/core/demangle.hpp>
 #include <unistd.h>
 #include <pwd.h>
+#include <typeinfo>
 
 namespace bfs = boost::filesystem;
 
 using namespace std;
+
+
+void test_cast(){
+    cout<< "test cast start."<<endl;
+    string s="Hello";
+    int &a=reinterpret_cast<int&>(s);
+    cout<<"string a: "<<a<<endl;
+    int *p=reinterpret_cast<int*>(&s);
+    cout<<"string a: "<<*p<<endl;
+}
+
+
+void process(int& i){
+    cout << "process(int&):" << i << endl;
+}
+void process(int&& i){
+    cout << "process(int&&):" << i << endl;
+}
+
+template<typename T>
+void myforward(T&& i){
+    cout << "myforward(int&&):" << i << endl;
+    process(forward<T>(i));
+}
+
+void test_wanmeizhuanfa()
+{
+    int a = 0;
+    process(a); //a被视为左值 process(int&):0
+    process(1); //1被视为右值 process(int&&):1
+    process(move(a)); //强制将a由左值改为右值 process(int&&):0
+    myforward(2);  //右值经过forward函数转交给process函数，却称为了一个左值，
+    //原因是该右值有了名字  所以是 process(int&):2
+    myforward(move(a));  // 同上，在转发的时候右值变成了左值  process(int&):0
+    // forward(a) // 错误用法，右值引用不接受左值
+    myforward(a);
+}
+
+int add(int a,int b){
+    return a+b;
+}
+/*
+总结
+由两种值类型，左值和右值。
+有三种引用类型，左值引用、右值引用和通用引用。左值引用只能绑定左值，右值引用只能绑定右值，通用引用由初始化时绑定的值的类型确定。
+const int& 常量左值引用，算是一个“万能”的引用类型，它可以绑定非常量左值、常量左值、右值
+左值和右值是独立于他们的类型的，右值引用可能是左值可能是右值，如果这个右值引用已经被命名了，他就是左值。
+引用折叠规则：所有的右值引用叠加到右值引用上仍然是一个右值引用，其他引用折叠都为左值引用。当T&&为模板参数时，输入左值，它将变成左值引用，输入右值则变成具名的右值应用。
+移动语义可以减少无谓的内存拷贝，要想实现移动语义，需要实现移动构造函数和移动赋值函数。
+std::move()将一个左值转换成一个右值，强制使用移动拷贝和赋值函数，这个函数本身并没有对这个左值什么特殊操作。
+std::forward()和universal references通用引用共同实现完美转发。
+用empalce_back()替换push_back()增加性能。
+https://www.jianshu.com/p/d19fc8447eaa
+*/
+void test_yinyong(){
+    cout<<"test yinyong start"<<endl;
+    int b=11;
+    int&& a=std::move(b);
+    cout<<"a="<<a<<endl;
+
+    const int& c=1;
+    cout<<"c="<<c<<endl;
+    int&& d=add(3,4);
+    cout<<"d="<<d<<endl;
+    test_wanmeizhuanfa();
+    
+}
+
+class testTypeid{
+    int type;
+};
+
+void test_typeid(){
+    cout<<"test typeid start."<<endl;
+    cout<<typeid(1.1f).name()<<endl;
+    int a=10;
+    cout<<typeid(a).name()<<endl;
+    string s="Hello!";
+    cout<<typeid(s).name()<<endl;
+    testTypeid tt;
+    cout<<typeid(tt).name()<<endl;
+}
 
 class time_point{
     public:
@@ -50,6 +133,11 @@ class wife{
     void mycar(family f){
         cout<<f.car;
     }
+    friend void call(wife &w){
+        cout<<"call wife "<<w.name<<endl;
+    }
+    private:
+    string name="pretty girl";
 };
 
 class husband{
@@ -70,6 +158,7 @@ void test_friend(){
     wife w;
     m.myhouse(f);
     w.myhouse(f);
+    call(w);
 }
 
 #include <limits>
@@ -334,6 +423,12 @@ void test_string()
     cout<<"test string start"<<endl;
     teststring ts(1122334455);
     cout<<ts.to_string()<<endl;
+
+    char buf[50]="Hello string.";
+    string a(buf);
+    cout<<"string:"<<a<<endl;
+    string a2("");
+    cout<<"string2:"<<a2<<endl;
 }
 
 void test_lambda()
@@ -403,4 +498,9 @@ void test_std()
     test_path();
     test_friend();
     test_operator();
+    test_typeid();
+    test_yinyong();
+    test_cast();
+    cerr<<"it is std error."<<endl;
+    clog<<"it is std log"<<endl;
 }

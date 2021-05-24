@@ -27,7 +27,7 @@ return std::shared_ptr<Bad>(this);
 ~Bad() { std::cout << "Bad::~Bad() called" << std::endl; }
 };
 
-int test_smartptr_bad()
+void test_smartptr_bad()
 {
     // 错误的示例，每个shared_ptr都认为自己是对象仅有的所有者
     std::shared_ptr<Bad> bp1(new Bad());
@@ -46,7 +46,7 @@ struct Good:std::enable_shared_from_this<Good>
     ~Good(){std::cout<<"Good::~Good() called"<<std::endl;}
 };
 
-int test_smartptr()
+void test_smartptr()
 {
     std::cout<<"test ptr start"<<std::endl;
     //test_smartptr_bad();

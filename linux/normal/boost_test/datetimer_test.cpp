@@ -213,7 +213,7 @@ void case9()
 
 //////////////////////////////////////////
 
-int datetimer_test()
+void datetimer_test()
 {
     std::cout<<"Test datetimer begin"<<std::endl;
     case1();

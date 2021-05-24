@@ -66,9 +66,9 @@ std::string name::to_string()const {
 void test_eos_name()
 {
     cout<<"test eos name start."<<endl;
-    name n(14526054933851013120);
-    name n2(6138663577826885632);
-    cout<<n.to_string()<<","<<n2.to_string()<<endl;
+    //name n(14526054933851013120);
+    //name n2(6138663577826885632);
+    //cout<<n.to_string()<<","<<n2.to_string()<<endl;
 }
 
 extern int asio_test();
