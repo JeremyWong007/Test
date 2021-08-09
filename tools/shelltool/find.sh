@@ -9,6 +9,7 @@ find . -depth -name '*eosio*' -execdir bash -c 'for f; do mv -i "$f" "${f//eosio
 find . -depth -name '*eos*' -execdir bash -c 'for f; do mv -i "$f" "${f//eos/taf}"; done' bash {} +
 find . -depth -name '*Eos*' -execdir bash -c 'for f; do mv -i "$f" "${f//Eos/Taf}"; done' bash {} +
 find . -depth -name '*eosio*' -execdir bash -c 'for f; do mv -i "$f" "${f//eosio/tafsys}"; done' bash {} +
+find . -depth -name '*producer*' -execdir bash -c 'for f; do mv -i "$f" "${f//producer/maker}"; done' bash {} +
 
 查看：
 find . -depth -name '*eosio*'
