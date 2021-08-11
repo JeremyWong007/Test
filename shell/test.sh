@@ -1,5 +1,16 @@
 #!/bin/bash
 
+function test_disk(){
+    sudo fdisk -l
+}
+
+function test_awk(){
+    ps -e | grep taf | awk '{print $1}' |xargs kill -9  #获取taf匹配的进程id，并强制杀死
+}
+
+function test_sed(){
+    
+}
 function test_string(){
     echo "test string start"
     str="24332 pts/11   00:00:00 tafcored"
@@ -12,7 +23,10 @@ function test_string(){
     echo ${url#*/}  #截取右边 第一个/
     echo ${url##*/} #截取右边 最后第一个/
     path="/data/info/git/test/shell"
-    echo ${path%shell}
+    echo ${path%shell} #删除shell
+    text=" 123 456 "
+    text=${text/ /-}  #只替换一个
+    text=${text// /-}  #全部替换
 }
 
 function test_net(){
