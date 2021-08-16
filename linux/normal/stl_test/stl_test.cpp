@@ -11,6 +11,7 @@
 #include <unistd.h>
 #include <pwd.h>
 #include <typeinfo>
+#include <cmath>
 
 namespace bfs = boost::filesystem;
 
@@ -503,4 +504,8 @@ void test_std()
     test_cast();
     cerr<<"it is std error."<<endl;
     clog<<"it is std log"<<endl;
+    cout<<"numeric_limits int64_t:"<<std::numeric_limits<int64_t>::max()<<endl;
+    cout<<"numeric_limits int8_t:"<<std::numeric_limits<int8_t>::max()<<endl;  //无法正确输出
+    cout<<"numeric_limits int16_t:"<<std::numeric_limits<int16_t>::max()<<endl;
+    cout<<"std::log1p: "<<std::log1p(0.05);
 }

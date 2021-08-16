@@ -10,6 +10,8 @@ function test_awk(){
 
 function test_sed(){
     echo "test sed start"
+    sed  's/123/hello/'   r.txt   #将文件中的123替换为hello，默认只替换每行第一个123
+    sed  -i 's/123/hello/'   w.txt   #将文件中的123替换为hello，默认只替换每行第一个123
 }
 function test_string(){
     echo "test string start"
@@ -153,3 +155,4 @@ test_array
 test_map
 test_yunsuanfu
 test_string
+test_sed
