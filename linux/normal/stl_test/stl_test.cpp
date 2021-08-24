@@ -17,6 +17,27 @@ namespace bfs = boost::filesystem;
 
 using namespace std;
 
+struct http_plugin_defaults {
+    //If empty, unix socket support will be completely disabled. If not empty,
+    // unix socket support is enabled with the given default path (treated relative
+    // to the datadir)
+    string default_unix_socket_path;
+    //If non 0, HTTP will be enabled by default on the given port number. If
+    // 0, HTTP will not be enabled by default
+    uint16_t default_http_port{11};
+};
+void ttt(http_plugin_defaults a)
+{
+   cout<<"a="<<a.default_http_port<<a.default_unix_socket_path;
+}
+void test_struct(){
+   cout<<"test_struct start"<<endl;
+   http_plugin_defaults a;
+   ttt({
+       .default_unix_socket_path="sfdf",
+       .default_http_port=22
+   });
+}
 
 void test_cast(){
     cout<< "test cast start."<<endl;
@@ -502,6 +523,7 @@ void test_std()
     test_typeid();
     test_yinyong();
     test_cast();
+    test_struct();
     cerr<<"it is std error."<<endl;
     clog<<"it is std log"<<endl;
     cout<<"numeric_limits int64_t:"<<std::numeric_limits<int64_t>::max()<<endl;

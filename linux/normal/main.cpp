@@ -27,6 +27,7 @@ class database
 void tmp_test()
 {
     cout<<"tmp test start"<<endl;
+    std::cout<<"********************************************************************************************"<<std::endl;
     cout<<"value = "<<('j'-'a'+6)<<endl;
     string str="ABC";
     cout<<"length="<<str.length()<<"size="<<str.size()<<"str:"<<str<<endl;

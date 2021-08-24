@@ -22,13 +22,14 @@ function test_string(){
     echo $str1
     echo $str2
     url="http://c.biancheng.net/index.html"
-    echo ${url#*/}  #截取右边 第一个/
-    echo ${url##*/} #截取右边 最后第一个/
+    echo ${url#*/}  #截取右边 第一个/的右边
+    echo ${url##*/} #截取右边 最后第一个/的右边
     path="/data/info/git/test/shell"
     echo ${path%shell} #删除shell
     text=" 123 456 "
     text=${text/ /-}  #只替换一个
     text=${text// /-}  #全部替换
+    echo "2014年7月21日" | tr -cd "[0-9]" #从字符串中提取数字
 }
 
 function test_net(){
@@ -39,11 +40,26 @@ function test_net(){
 function test_if_else(){
     echo "test if_else start"
     version="default"
+    num=11
     if [ $version == "default" ];
     then
         echo "default"
     else
         echo "Not default"
+    fi
+
+    if [ "$num" -gt "10" ] && [ $version == "default" ];
+    then
+        echo "is true"
+    else
+        echo "not true"
+    fi
+
+    if [ $num -gt 11 ] && [ $version == "default" ];
+    then
+        echo "is true2"
+    else
+        echo "not true2"
     fi
     echo "End"
 }
@@ -60,6 +76,15 @@ function test_map(){
     echo "map长度:${#mymap[@]}"
 }
 
+:<<YUNSUNFU
+运算符	说明	举例
+-eq	检测两个数是否相等，相等返回 true。	[ $a -eq $b ] 返回 false。
+-ne	检测两个数是否不相等，不相等返回 true。	[ $a -ne $b ] 返回 true。
+-gt	检测左边的数是否大于右边的，如果是，则返回 true。	[ $a -gt $b ] 返回 false。
+-lt	检测左边的数是否小于右边的，如果是，则返回 true。	[ $a -lt $b ] 返回 true。
+-ge	检测左边的数是否大于等于右边的，如果是，则返回 true。	[ $a -ge $b ] 返回 false。
+-le	检测左边的数是否小于等于右边的，如果是，则返回 true。	[ $a -le $b ] 返回 true。
+YUNSUNFU
 function test_yunsuanfu(){
     echo "test yunsuanfu start:"
     value=`expr 2 + 3 `
