@@ -1,13 +1,13 @@
-#include <tafio/tafio.hpp>
+#include <tafsys/tafsys.hpp>
 
-//using namespace tafio;
+//using namespace tafsys;
 
-class [[tafio::contract]] hello : public tafio::contract {
+class [[tafsys::contract]] hello : public tafsys::contract {
   public:
-      using tafio::contract::contract;
+      using tafsys::contract::contract;
 
-      [[tafio::action]]
-      void hi( tafio::name user ) {
-         tafio::print( "Hello7, ", user);
+      [[tafsys::action]]
+      void hi( tafsys::name user ) {
+         tafsys::print( "Hello7, ", user);
       }
 };

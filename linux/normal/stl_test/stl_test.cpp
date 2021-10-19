@@ -17,6 +17,14 @@ namespace bfs = boost::filesystem;
 
 using namespace std;
 
+void test_map(){
+   cout<<"test_map start"<<endl;
+   map<string,string> m;
+   m["name"]="lili";
+   cout<<"name:"<<m["name"]<<endl;
+   cout<<"name2:"<<m["name2"]<<endl;
+}
+
 struct http_plugin_defaults {
     //If empty, unix socket support will be completely disabled. If not empty,
     // unix socket support is enabled with the given default path (treated relative
@@ -337,6 +345,57 @@ struct st1{
     }
 };
 
+class abstract_plugin{
+    public:
+        int a=0;
+        virtual void set(int aa) = 0;
+};
+class plugin1 : public abstract_plugin{
+    void set(int aa){a=aa;cout<<"plugin1 a="<<a;}
+};
+class plugin2 : public abstract_plugin{
+    void set(int aa){a=aa;cout<<"plugin2 a="<<a;}
+};
+class plugin3 : public abstract_plugin{
+    void set(int aa){a=aa;cout<<"plugin3 a="<<a;}
+};
+class app{
+    public:
+        app(){};
+        template<typename... Ts>
+        void init(){
+            init1({find<Ts>()...});
+        }
+        template<typename Plugin>
+        Plugin* find(){
+            string name=typeid(Plugin).name();
+            auto itr=pulgs.find(name);
+            if(itr == pulgs.end()){
+                return nullptr;
+            }
+            return dynamic_cast<Plugin*>(itr->second.get());
+        }
+        void init1(vector<abstract_plugin*> va){
+            for(uint i=0;i<va.size();i++){
+                if(nullptr==va[i]){
+                    cout<<"va["<<i<<"] is null"<<endl;
+                }
+                else{
+                    cout<<"va set "<<i<<endl;
+                    va[i]->set(i);
+                }
+            }
+        };
+        void set_args(){
+            auto p1=new plugin1();
+            auto p2=new plugin2();
+            pulgs["plug1"].reset(p1);
+            pulgs["plug2"].reset(p2);
+        }
+    private:
+        map<string,unique_ptr<abstract_plugin>> pulgs;
+};
+
 
 void test_template(){
     cout<<"test template start"<<endl;
@@ -344,12 +403,16 @@ void test_template(){
     st1<int,int,string> s1;
     s1.template func1("tt");
     s1.func1("HaHa");
-
     /*
     总结：
     1 template的最后一个模板参数与函数入参相同时可以省略。如果不是最后一个参数，不可以省略。
     2 .template告诉编译器后面的变量为模板。
     */
+
+   //测试模板参数包
+   class app a;
+   a.set_args();
+   a.init<plugin1,plugin2>();
 }
 
 namespace tafio {
@@ -499,9 +562,62 @@ void test_simple()
     cout<<"array:"<<a.size()<<" "<<a[1]<<" "<<a[2]<<endl;
 }
 
+#define FOREACH_INTERP_RESULT(V)                                            \
+  V(Ok, "ok")                                                               \
+  /* returned from the top-most function */                                 \
+  V(Returned, "returned")                                                   \
+  /* memory access is out of bounds */                                      \
+  V(TrapMemoryAccessOutOfBounds, "out of bounds memory access")             \
+  /* atomic memory access is unaligned  */                                  \
+  V(TrapAtomicMemoryAccessUnaligned, "atomic memory access is unaligned")   \
+  /* converting from float -> int would overflow int */                     \
+  V(TrapIntegerOverflow, "integer overflow")                                \
+  /* dividend is zero in integer divide */                                  \
+  V(TrapIntegerDivideByZero, "integer divide by zero")                      \
+  /* converting from float -> int where float is nan */                     \
+  V(TrapInvalidConversionToInteger, "invalid conversion to integer")        \
+  /* function table index is out of bounds */                               \
+  V(TrapUndefinedTableIndex, "undefined table index")                       \
+  /* function table element is uninitialized */                             \
+  V(TrapUninitializedTableElement, "uninitialized table element")           \
+  /* unreachable instruction executed */                                    \
+  V(TrapUnreachable, "unreachable executed")                                \
+  /* call indirect signature doesn't match function table signature */      \
+  V(TrapIndirectCallSignatureMismatch, "indirect call signature mismatch")  \
+  /* ran out of call stack frames (probably infinite recursion) */          \
+  V(TrapCallStackExhausted, "call stack exhausted")                         \
+  /* ran out of value stack space */                                        \
+  V(TrapValueStackExhausted, "value stack exhausted")                       \
+  /* we called a host function, but the return value didn't match the */    \
+  /* expected type */                                                       \
+  V(TrapHostResultTypeMismatch, "host result type mismatch")                \
+  /* we called an import function, but it didn't complete succesfully */    \
+  V(TrapHostTrapped, "host function trapped")                               \
+  /* we attempted to call a function with the an argument list that doesn't \
+   * match the function signature */                                        \
+  V(ArgumentTypeMismatch, "argument type mismatch")                         \
+  /* we tried to get an export by name that doesn't exist */                \
+  V(UnknownExport, "unknown export")                                        \
+  /* the expected export kind doesn't match. */                             \
+  V(ExportKindMismatch, "export kind mismatch")
+
+enum class Result1 {
+#define V(Name, str) Name,
+  FOREACH_INTERP_RESULT(V)
+#undef V
+};
+
+enum class rr{
+    OK,
+    RETURN
+};
+
 extern int test_smartptr();
 void test_std()
 {
+    
+    cout<<"result:"<<int(rr::OK)<<endl;
+    cout<<"result:"<<int(Result1::Ok)<<int(Result1::Returned);
     cout<<"test std start."<<endl;
     std::cout<<"********************************************************************************************"<<std::endl;
     test_numeric_limits();
@@ -524,6 +640,7 @@ void test_std()
     test_yinyong();
     test_cast();
     test_struct();
+    test_map();
     cerr<<"it is std error."<<endl;
     clog<<"it is std log"<<endl;
     cout<<"numeric_limits int64_t:"<<std::numeric_limits<int64_t>::max()<<endl;
