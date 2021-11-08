@@ -12,6 +12,7 @@
 #include <pwd.h>
 #include <typeinfo>
 #include <cmath>
+#include "StlTestForClass.hpp"
 
 namespace bfs = boost::filesystem;
 
@@ -444,6 +445,7 @@ void test_namespace()
     命名空间中可以using自己，相当于没有操作
     可以定义using中已有的变量，定义前使用是的是using的变量，定义后使用的是定义的变量。
     */
+    
 }
 
 struct teststring{
@@ -526,6 +528,7 @@ void test_lambda()
         cout << b << endl;
         };
     f(a);
+    //stlTestForClass t;
 }
 
 void test_variant()
@@ -552,8 +555,16 @@ std::optional<int> div_int(int a, int b) {
 
 void test_optional()
 {
+    cout<<"test_optional start"<<endl;
     std::optional<int> a(10);
     cout<<"a = "<<a.value()<<endl;
+    std::optional<string> str("Hello!");
+    cout<<"str = "<<str.value()<<endl;
+    if(!str){
+        cout<<"!str is true"<<endl;
+    }else{
+        cout<<"!str is false"<<endl;
+    }
 }
 
 void test_simple()
