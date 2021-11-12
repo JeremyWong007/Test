@@ -8,6 +8,8 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/assert.hpp>
 #include <boost/static_assert.hpp>
+#include <boost/thread.hpp>
+#include <boost/array.hpp>
 #include "thread.hpp"
 
 /* keys:
@@ -119,6 +121,86 @@ void test_thread(){
     named_thread_pool threadPool("test", 4);
 }
 
+void test_client(){
+    setClient();
+}
+#if 1
+boost::asio::io_service ios3; 
+boost::asio::ip::tcp::endpoint endpoint3(boost::asio::ip::tcp::v4(), 80); 
+boost::asio::ip::tcp::acceptor acceptor3(ios3, endpoint3);
+boost::asio::ip::tcp::socket sock3(ios3);
+string data3="HTTP/1.1 200 OK\r\nContent-Length: 13\r\n\r\nHello, world!";
+void accept_handler(const boost::system::error_code &ec){
+    if(!ec){
+        cout<<"accept handler in"<<endl;
+    }
+}
+void test_asio_webserver(){
+    acceptor3.listen();
+    acceptor3.async_accept(sock3,accept_handler);
+    ios3.run();
+}
+#endif
+
+#if 0
+boost::asio::io_service ios2;
+boost::asio::ip::tcp::resolver resolver2(ios2);
+boost::asio::ip::tcp::socket socket2(ios2);
+boost::array<char, 4096> buff2;
+void read_handler(const boost::system::error_code &ec, std::size_t bytes_transfer){
+    if(!ec){
+        cout<<"read ok"<<endl;
+        cout<<string(buff2.data(),bytes_transfer)<<endl;
+    }
+}
+void connect_handler(const boost::system::error_code &ec){
+    if(!ec){
+        cout<<"connect ok"<<endl;
+        //boost::asio::write(socket2, boost::asio::buffer("GET / HTTP/1.1\r\nHost: highscore.de\r\n\r\n"));
+        boost::asio::write(socket2, boost::asio::buffer("GET / HTTP/1.1\r\nHost: baidu.com\r\n\r\n"));
+        //boost::asio::write(socket2, boost::asio::buffer("GET http://www.baidu.com/index.html HTTP/1.1\n"));
+        socket2.async_read_some(boost::asio::buffer(buff2), read_handler);
+    }
+}
+void resolverHandler2(const boost::system::error_code &ec, boost::asio::ip::tcp::resolver::iterator it){
+    if(!ec){
+        cout<<"resolverHandler2 ok"<<endl;
+        socket2.async_connect(*it, connect_handler);
+    }
+}
+void test_asio_query(void){
+    //boost::asio::ip::tcp::resolver::query query("www.highscore.de", "80");
+    boost::asio::ip::tcp::resolver::query query("www.baidu.com", "80");
+    resolver2.async_resolve(query,resolverHandler2);
+    ios2.run();
+}
+#endif
+
+void handler(const boost::system::error_code &ec){
+    cout<<"5 s get"<<endl;
+}
+void handler2(const boost::system::error_code &ec){
+    cout<<"10 s get"<<endl;
+}
+boost::asio::io_service ios1;
+void run(void){
+    ios1.run();
+}
+void test_asio_timer(){
+    boost::asio::deadline_timer timer(ios1, boost::posix_time::seconds(5));
+    timer.async_wait(handler);
+    boost::asio::deadline_timer timer2(ios1, boost::posix_time::seconds(10));
+    timer2.async_wait(handler2);
+    boost::thread thread1(run);
+    boost::thread thread2(run);
+    thread1.join();
+    thread2.join();
+}
+void test_asio(){
+    //test_asio_query();
+    test_asio_webserver();
+}
+
 void test_boost(void)
 {
     std::cout<<"Test boost begin"<<std::endl;
@@ -128,7 +210,9 @@ void test_boost(void)
     //test_multi_index_container();
     //asio_test();
     //test_eos_name();
-    test_assert();
+    //test_assert();
     //datetimer_test();
-    test_thread();
+    //test_thread();
+    //test_client();
+    test_asio();
 }
