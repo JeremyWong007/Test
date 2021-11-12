@@ -130,9 +130,16 @@ boost::asio::ip::tcp::endpoint endpoint3(boost::asio::ip::tcp::v4(), 80);
 boost::asio::ip::tcp::acceptor acceptor3(ios3, endpoint3);
 boost::asio::ip::tcp::socket sock3(ios3);
 string data3="HTTP/1.1 200 OK\r\nContent-Length: 13\r\n\r\nHello, world!";
+void write_handler(const boost::system::error_code &ec, std::size_t bytes_transferred) 
+{
+    if(!ec){
+        cout<<"write end."<<endl;
+    }
+} 
 void accept_handler(const boost::system::error_code &ec){
     if(!ec){
         cout<<"accept handler in"<<endl;
+        boost::asio::async_write(sock3, boost::asio::buffer(data3),write_handler);
     }
 }
 void test_asio_webserver(){
