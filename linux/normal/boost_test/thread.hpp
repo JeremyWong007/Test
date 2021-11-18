@@ -43,14 +43,3 @@ class named_thread_pool {
       //boost::asio::io_context        _ioc;
       //std::optional<ioc_work_t>       _ioc_work;
    };
-
-   void setClient(void){
-      boost::asio::io_context io_context;
-      boost::asio::ip::tcp::socket s(io_context);
-      boost::asio::ip::tcp::resolver resolver(io_context);
-      boost::asio::connect(s, resolver.resolve("192.168.0.232", "80"));
-   }
-   void setServer(void)
-   {
-      
-   }

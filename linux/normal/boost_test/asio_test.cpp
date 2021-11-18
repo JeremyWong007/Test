@@ -5,7 +5,7 @@
 using namespace std;
 
 
-#if 1
+#if 0
 boost::asio::io_service ios3;
 //boost::asio::io_service::work work3(ios3);
 boost::asio::ip::tcp::endpoint endpoint3(boost::asio::ip::tcp::v4(), 8090); 
@@ -32,7 +32,7 @@ void test_asio_webserver(){
 }
 #endif
 
-#if 1
+#if 0
 boost::asio::io_service ios2;
 boost::asio::ip::tcp::resolver resolver2(ios2);
 boost::asio::ip::tcp::socket socket2(ios2);
@@ -97,16 +97,16 @@ void process_client(shared_ptr<boost::asio::ip::tcp::socket> client){
     client->async_send(boost::asio::buffer(*message),callback);
 }
 typedef function<void (const boost::system::error_code&)> accept_callback;
-void start_accept(boost::asio::ip::tcp::acceptor &server){
-    shared_ptr<boost::asio::ip::tcp::socket> client(new boost::asio::ip::tcp::socket(server.get_executor()));
-    accept_callback callback=[&server,client](const boost::system::error_code &error){
+void start_accept(boost::asio::ip::tcp::acceptor &acceptor){
+    shared_ptr<boost::asio::ip::tcp::socket> client(new boost::asio::ip::tcp::socket(acceptor.get_executor()));
+    accept_callback callback=[&acceptor,client](const boost::system::error_code &error){
         if(!error){
             std::cout<<"callback in"<<std::endl;
             process_client(client);
         }
-        start_accept(server);
+        start_accept(acceptor);
     };
-    server.async_accept(*client,callback);
+    acceptor.async_accept(*client,callback);
 }
 void test_server_async(){
     try{
