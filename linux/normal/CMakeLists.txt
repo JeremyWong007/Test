@@ -43,10 +43,15 @@ find_package(Boost COMPONENTS system filesystem thread date_time REQUIRED)
 
 #头文件搜索目录
 include_directories(${Boost_INCLUDE_DIR})
+include_directories(/usr/local/include/orocos)
 
 #链接库搜索路径
 #LINK_DIRECTORIES(lib /home/yanfa-1/eosio/2.0/src/boost_1_71_0/lib)
-link_directories(lib ${Boost_LIBRARY_DIR})
+link_directories("/usr/local/lib")
+
+#链接库
+link_libraries("/usr/local/lib/liborocos-log4cpp.so")
+
 #设置链接库
 SET(EXTRA_LIBS ${EXTRA_LIBS} ${MY_LINK})
 

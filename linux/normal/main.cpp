@@ -6,6 +6,11 @@
 #include "boost_test/boost_test.h"
 #include <locale.h>
 #include <libintl.h>
+#include <log4cpp/Category.hh>
+#include <log4cpp/OstreamAppender.hh>
+#include <log4cpp/Priority.hh>
+#include <log4cpp/PatternLayout.hh>
+#include <log4cpp/PropertyConfigurator.hh>
 
 using namespace std;
 
@@ -32,6 +37,22 @@ int main(void)
     cout<<"local is "<<p<<endl;
     cout<<"中文显示"<<endl;
 
+    //std::string initFileName = "log4cpp.properties";
+    //log4cpp::PropertyConfigurator::configure(initFileName);
+    log4cpp::OstreamAppender* osAppender=new log4cpp::OstreamAppender("osAppender", &cout);
+    log4cpp::PatternLayout* pLayout=new log4cpp::PatternLayout();
+    pLayout->setConversionPattern("%d %p %m%n");
+    osAppender->setLayout(pLayout);
+    // log4cpp::Category& root = log4cpp::Category::getRoot();
+    // log4cpp::Category& infoCategory = root.getInstance("infoCategory");
+    // infoCategory.addAppender(osAppender);
+    // infoCategory.setPriority(log4cpp::Priority::INFO);
+    // infoCategory.info("system is running %d",10);
+    // infoCategory.warn("system has a warning");
+    // infoCategory.error("system has a error, can't find a file");
+    // infoCategory.fatal("system has a fatal error,must be shutdown");
+    // infoCategory.info("system shutdown,you can find some information in system log");
+
     test_boost();
     //test_std();
     //sundries_test();
@@ -42,4 +63,6 @@ int main(void)
     //    cout<<"Not in TEST_IN_LINUX"<<endl;
     #endif
     //cout<<SHOWSTR<<endl;
+    log4cpp::Category::shutdown();
+    return 0;
 }
