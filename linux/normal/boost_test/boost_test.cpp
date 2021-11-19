@@ -10,7 +10,6 @@
 #include <boost/static_assert.hpp>
 #include <boost/thread.hpp>
 #include <boost/array.hpp>
-#include "thread.hpp"
 
 /* keys:
 boost::tuple
@@ -104,11 +103,6 @@ void test_tuple()
     std::cout<<tt<<std::endl;
 }
 
-void test_thread(){
-    std::cout<<"test_thread in"<<std::endl;
-    named_thread_pool threadPool("test", 4);
-}
-
 void test_boost(void)
 {
     std::cout<<"Test boost begin"<<std::endl;
@@ -120,7 +114,6 @@ void test_boost(void)
     //test_eos_name();
     //test_assert();
     //datetimer_test();
-    //test_thread();
     //test_client();
     test_asio();
 }

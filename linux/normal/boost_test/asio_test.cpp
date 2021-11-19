@@ -2,8 +2,23 @@
 #include <boost/asio.hpp>
 #include <boost/thread.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
+#include "thread_utils.hpp"
+
 using namespace std;
 
+void test_thread_pool(){
+    std::cout<<"Main thread is "<<std::this_thread::get_id()<<std::endl;
+    named_thread_pool pool("prefix",5);
+    boost::asio::post(pool.get_executor(), [](){
+        std::cout<<"Thread in "<<std::this_thread::get_id()<<std::endl;
+    });
+    boost::asio::post(pool.get_executor(), [](){
+        while(1){
+        std::cout<<"Thread in "<<std::this_thread::get_id()<<std::endl;
+        }
+    });
+    while (1);    
+}
 
 #if 0
 boost::asio::io_service ios3;
@@ -191,4 +206,5 @@ void test_asio()
     //test_server_async();
     //test_asio_query();
     //test_asio_webserver();
+    //test_thread_pool();
 }
