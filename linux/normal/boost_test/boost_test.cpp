@@ -10,6 +10,8 @@
 #include <boost/static_assert.hpp>
 #include <boost/thread.hpp>
 #include <boost/array.hpp>
+#include "../common.h"
+log4cpp::Category& boostCategory = root.getInstance("boost");
 
 /* keys:
 boost::tuple
@@ -105,8 +107,8 @@ void test_tuple()
 
 void test_boost(void)
 {
-    std::cout<<"Test boost begin"<<std::endl;
     std::cout<<"********************************************************************************************"<<std::endl;
+    boostCategory.info("Test boost begin");
     //test_tuple();
     //test_bind();
     //test_multi_index_container();
@@ -115,5 +117,5 @@ void test_boost(void)
     //test_assert();
     //datetimer_test();
     //test_client();
-    test_asio();
+    //test_asio();
 }

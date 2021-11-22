@@ -4,3 +4,4 @@ AUX_SOURCE_DIRECTORY(. STLTEST_SRC_LIST)
 ADD_LIBRARY(stl_test ${STLTEST_SRC_LIST})
 
 INCLUDE_DIRECTORIES(/home/yanfa-1/eosio/2.0/src/boost_1_71_0/include/)
+INCLUDE_DIRECTORIES(/usr/local/include/orocos)

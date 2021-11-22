@@ -13,6 +13,8 @@
 #include <typeinfo>
 #include <cmath>
 #include "StlTestForClass.hpp"
+#include "../common.h"
+log4cpp::Category& stlCategory = root.getInstance("stl");
 
 namespace bfs = boost::filesystem;
 
@@ -627,35 +629,35 @@ extern int test_smartptr();
 void test_std()
 {
     
-    cout<<"result:"<<int(rr::OK)<<endl;
-    cout<<"result:"<<int(Result1::Ok)<<int(Result1::Returned);
-    cout<<"test std start."<<endl;
+    //cout<<"result:"<<int(rr::OK)<<endl;
+    //cout<<"result:"<<int(Result1::Ok)<<int(Result1::Returned);
     std::cout<<"********************************************************************************************"<<std::endl;
-    test_numeric_limits();
-    test_simple();
-    test_optional();
-    test_smartptr();
-    test_variant();
-    test_lambda();
-    test_string();
-    test_namespace();
-    test_template();
-    test_uint128();
-    test_hash();
-    test_ofstream();
-    test_sstream();
-    test_path();
-    test_friend();
-    test_operator();
-    test_typeid();
-    test_yinyong();
-    test_cast();
-    test_struct();
-    test_map();
-    cerr<<"it is std error."<<endl;
-    clog<<"it is std log"<<endl;
-    cout<<"numeric_limits int64_t:"<<std::numeric_limits<int64_t>::max()<<endl;
-    cout<<"numeric_limits int8_t:"<<std::numeric_limits<int8_t>::max()<<endl;  //无法正确输出
-    cout<<"numeric_limits int16_t:"<<std::numeric_limits<int16_t>::max()<<endl;
-    cout<<"std::log1p: "<<std::log1p(0.05);
+    stlCategory.info("test std start.");
+    // test_numeric_limits();
+    // test_simple();
+    // test_optional();
+    // test_smartptr();
+    // test_variant();
+    // test_lambda();
+    // test_string();
+    // test_namespace();
+    // test_template();
+    // test_uint128();
+    // test_hash();
+    // test_ofstream();
+    // test_sstream();
+    // test_path();
+    // test_friend();
+    // test_operator();
+    // test_typeid();
+    // test_yinyong();
+    // test_cast();
+    // test_struct();
+    // test_map();
+    // cerr<<"it is std error."<<endl;
+    // clog<<"it is std log"<<endl;
+    // cout<<"numeric_limits int64_t:"<<std::numeric_limits<int64_t>::max()<<endl;
+    // cout<<"numeric_limits int8_t:"<<std::numeric_limits<int8_t>::max()<<endl;  //无法正确输出
+    // cout<<"numeric_limits int16_t:"<<std::numeric_limits<int16_t>::max()<<endl;
+    // cout<<"std::log1p: "<<std::log1p(0.05);
 }

@@ -6,11 +6,9 @@
 #include "boost_test/boost_test.h"
 #include <locale.h>
 #include <libintl.h>
-#include <log4cpp/Category.hh>
-#include <log4cpp/OstreamAppender.hh>
-#include <log4cpp/Priority.hh>
-#include <log4cpp/PatternLayout.hh>
-#include <log4cpp/PropertyConfigurator.hh>
+#include "common.h"
+log4cpp::Category& root = log4cpp::Category::getRoot();
+log4cpp::Category& mainCategory = root.getInstance("main");
 
 using namespace std;
 
@@ -19,6 +17,7 @@ extern void sundries_test();
 
 #define LOCALEDIR "/usr/share/locale/"      /* 设置 mo 文件所在基目录(该目录下会有 zh_CN, zh_TW 等等这些目录) */
 #define PACKAGE "foonly"    /* 函数的第 1 个参数 domainname */
+
 
 void tmp_test()
 {
@@ -37,25 +36,14 @@ int main(void)
     cout<<"local is "<<p<<endl;
     cout<<"中文显示"<<endl;
 
-    //std::string initFileName = "log4cpp.properties";
-    //log4cpp::PropertyConfigurator::configure(initFileName);
-    log4cpp::OstreamAppender* osAppender=new log4cpp::OstreamAppender("osAppender", &cout);
-    log4cpp::PatternLayout* pLayout=new log4cpp::PatternLayout();
-    pLayout->setConversionPattern("%d %p %m%n");
-    osAppender->setLayout(pLayout);
-    // log4cpp::Category& root = log4cpp::Category::getRoot();
-    // log4cpp::Category& infoCategory = root.getInstance("infoCategory");
-    // infoCategory.addAppender(osAppender);
-    // infoCategory.setPriority(log4cpp::Priority::INFO);
-    // infoCategory.info("system is running %d",10);
-    // infoCategory.warn("system has a warning");
-    // infoCategory.error("system has a error, can't find a file");
-    // infoCategory.fatal("system has a fatal error,must be shutdown");
-    // infoCategory.info("system shutdown,you can find some information in system log");
+    //std::string initFileName = "/data/info/git/test/linux/normal/log4cpp.properties";
+    std::string initFileName = "../log4cpp.properties";
+    log4cpp::PropertyConfigurator::configure(initFileName);
+    mainCategory.info("Application Test start");
 
     test_boost();
-    //test_std();
-    //sundries_test();
+    test_std();
+    sundries_test();
     //tmp_test();
     #ifdef SHOWSTR
     //    cout<<"In TEST_IN_LINUX"<<endl;

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include "../common.h"
+log4cpp::Category& sundryCategory = root.getInstance("sundry");
 
 using namespace std;
 
@@ -41,11 +43,11 @@ void say(int a,int b=10,int c=11)
 
 void sundries_test()
 {
-    cout<<"#######################################################################################"<<endl;
-    cout<<"sundries test start"<<endl;
-    say(1);
-    say(1,2);
-    say(1,2,3);
-    test_fucptr();
-    test_show();
+    std::cout<<"********************************************************************************************"<<std::endl;
+    sundryCategory.info("sundries test start");
+    // say(1);
+    // say(1,2);
+    // say(1,2,3);
+    // test_fucptr();
+    // test_show();
 }
