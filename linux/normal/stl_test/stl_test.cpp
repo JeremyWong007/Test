@@ -20,6 +20,18 @@ namespace bfs = boost::filesystem;
 
 using namespace std;
 
+void test_exception(){
+    cout<<"test_exception in"<<endl;
+    try{
+        log4cpp::Category *p=0;
+        typeid(*p);
+    }
+    catch(std::exception e){
+        elog("exception caught %s",e.what());
+        throw;
+    }
+}
+
 void test_map(){
    cout<<"test_map start"<<endl;
    map<string,string> m;
@@ -660,4 +672,5 @@ void test_std()
     // cout<<"numeric_limits int8_t:"<<std::numeric_limits<int8_t>::max()<<endl;  //无法正确输出
     // cout<<"numeric_limits int16_t:"<<std::numeric_limits<int16_t>::max()<<endl;
     // cout<<"std::log1p: "<<std::log1p(0.05);
+    test_exception();
 }

@@ -9,4 +9,10 @@
 #include <log4cpp/Priority.hh>
 #include <log4cpp/PatternLayout.hh>
 #include <log4cpp/PropertyConfigurator.hh>
+
 extern log4cpp::Category& root;
+extern log4cpp::Category& mainCategory;
+#define __format(__fmt__)  "%s:%d]: " __fmt__ 
+#define dlog(__fmt__, ...)   mainCategory.debug(__format(__fmt__),__FILE__, __LINE__,##__VA_ARGS__)
+#define ilog(__fmt__, ...)   mainCategory.info(__format(__fmt__),__FILE__, __LINE__,##__VA_ARGS__)
+#define elog(__fmt__, ...)   mainCategory.error(__format(__fmt__),__FILE__, __LINE__,##__VA_ARGS__)

@@ -30,27 +30,32 @@ void tmp_test()
 
 int main(void)
 {
-    char *p=setlocale(LC_ALL,"");
-    bindtextdomain (PACKAGE, LOCALEDIR);
-    textdomain (PACKAGE);
-    cout<<"local is "<<p<<endl;
-    cout<<"中文显示"<<endl;
+    try{
+        char *p=setlocale(LC_ALL,"");
+        bindtextdomain (PACKAGE, LOCALEDIR);
+        textdomain (PACKAGE);
+        cout<<"local is "<<p<<endl;
+        cout<<"中文显示"<<endl;
 
-    //std::string initFileName = "/data/info/git/test/linux/normal/log4cpp.properties";
-    std::string initFileName = "../log4cpp.properties";
-    log4cpp::PropertyConfigurator::configure(initFileName);
-    mainCategory.info("Application Test start");
+        //std::string initFileName = "/data/info/git/test/linux/normal/log4cpp.properties";
+        std::string initFileName = "../log4cpp.properties";
+        log4cpp::PropertyConfigurator::configure(initFileName);
+        ilog("Application Test start");
 
-    test_boost();
-    test_std();
-    sundries_test();
-    //tmp_test();
-    #ifdef SHOWSTR
-    //    cout<<"In TEST_IN_LINUX"<<endl;
-    #else
-    //    cout<<"Not in TEST_IN_LINUX"<<endl;
-    #endif
-    //cout<<SHOWSTR<<endl;
+        test_boost();
+        test_std();
+        sundries_test();
+        //tmp_test();
+        #ifdef SHOWSTR
+        //    cout<<"In TEST_IN_LINUX"<<endl;
+        #else
+        //    cout<<"Not in TEST_IN_LINUX"<<endl;
+        #endif
+        //cout<<SHOWSTR<<endl;
+    }catch(...){
+        elog("unknown exception.");
+    }
     log4cpp::Category::shutdown();
+    
     return 0;
 }
