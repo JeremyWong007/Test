@@ -275,8 +275,8 @@ void test_tuple()
 
 void test_boost(void)
 {
-    std::cout<<"********************************************************************************************"<<std::endl;
-    boostCategory.info("Test boost begin");
+    std::cout<<"****************************************************************************************************************************************"<<std::endl;
+    ilog("Test boost begin");
     //test_tuple();
     //test_bind();
     //test_multi_index_container();
@@ -286,5 +286,5 @@ void test_boost(void)
     //datetimer_test();
     //test_client();
     //test_asio();
-    test_signal2();
+    //test_signal2();
 }

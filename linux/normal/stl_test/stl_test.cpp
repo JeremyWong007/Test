@@ -643,8 +643,8 @@ void test_std()
     
     //cout<<"result:"<<int(rr::OK)<<endl;
     //cout<<"result:"<<int(Result1::Ok)<<int(Result1::Returned);
-    std::cout<<"********************************************************************************************"<<std::endl;
-    stlCategory.info("test std start.");
+    std::cout<<"****************************************************************************************************************************************"<<std::endl;
+    ilog("test std start.");
     // test_numeric_limits();
     // test_simple();
     // test_optional();
