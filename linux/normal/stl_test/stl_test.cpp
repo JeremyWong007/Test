@@ -672,5 +672,5 @@ void test_std()
     // cout<<"numeric_limits int8_t:"<<std::numeric_limits<int8_t>::max()<<endl;  //无法正确输出
     // cout<<"numeric_limits int16_t:"<<std::numeric_limits<int16_t>::max()<<endl;
     // cout<<"std::log1p: "<<std::log1p(0.05);
-    test_exception();
+    //test_exception();
 }
