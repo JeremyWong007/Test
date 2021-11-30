@@ -52,6 +52,8 @@ int main(void)
         //    cout<<"Not in TEST_IN_LINUX"<<endl;
         #endif
         //cout<<SHOWSTR<<endl;
+    }catch(std::exception e){
+        elog("exception caught %s", e.what());
     }catch(...){
         elog("unknown exception.");
     }
