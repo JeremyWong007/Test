@@ -263,7 +263,7 @@ void test_bind()
     cout << *p<<endl;
     cout<<"test bind end."<<endl;
 }
-void test_tuple()
+void test_tuple1()
 {
     typedef boost::tuple<std::string, std::string, int> person1;
     person1 p1("Bob","ShangHai",20);
@@ -277,7 +277,7 @@ void test_boost(void)
 {
     std::cout<<"****************************************************************************************************************************************"<<std::endl;
     ilog("Test boost begin");
-    //test_tuple();
+    //test_tuple1();
     //test_bind();
     //test_multi_index_container();
     //asio_test();
