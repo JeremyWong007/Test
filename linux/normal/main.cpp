@@ -7,6 +7,7 @@
 #include <locale.h>
 #include <libintl.h>
 #include "common.h"
+
 log4cpp::Category& root = log4cpp::Category::getRoot();
 log4cpp::Category& mainCategory = root.getInstance("main");
 

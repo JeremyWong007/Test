@@ -14,11 +14,16 @@
 #include <cmath>
 #include "StlTestForClass.hpp"
 #include "../common.h"
+
 log4cpp::Category& stlCategory = root.getInstance("stl");
 
 namespace bfs = boost::filesystem;
 
 using namespace std;
+
+void test_rand(){
+    
+}
 
 void test_exception(){
     cout<<"test_exception in"<<endl;
@@ -673,4 +678,5 @@ void test_std()
     // cout<<"numeric_limits int16_t:"<<std::numeric_limits<int16_t>::max()<<endl;
     // cout<<"std::log1p: "<<std::log1p(0.05);
     //test_exception();
+    test_rand();
 }
