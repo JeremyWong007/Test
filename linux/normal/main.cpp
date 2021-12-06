@@ -48,7 +48,7 @@ int main(void)
         test_std();
         sundries_test();
         //tmp_test();
-        exercises();
+        //exercises();
         #ifdef SHOWSTR
         //    cout<<"In TEST_IN_LINUX"<<endl;
         #else
