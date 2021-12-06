@@ -71,12 +71,16 @@ void test_tuple(void){
 /*
 总结：
 decltype是为了解决复杂的类型声明而使用的关键字，称作decltype类型说明符。
+std::declval将任意类型 T 转换成引用类型，令在 decltype 表达式中不必经过构造函数就能使用成员函数。
 
 decltype可以作用于变量、表达式及函数名。①作用于变量直接得到变量的类型；
 ②作用于表达式，结果是左值的表达式得到类型的引用，结果是右值的表达式得到类型；③作用于函数名会得到函数类型，不会自动转换成指针。
 
 decltype不会去真的求解表达式的值，可以放心使用。
 */
+struct A{
+    virtual int value()=0;
+};
 int add_to(int &des, int ori){
     return 1;
 };
@@ -115,6 +119,8 @@ void test_decltype(){
     decltype(add_to) *pf = add_to;
 
     cout<<b<<c<<ri<<"temp="<<temp<<"pf:"<<pf(i,i);
+
+    decltype(std::declval<A>().value()) a=0;  //int a
 }
 
 void test_exception(){
@@ -771,6 +777,6 @@ void test_std()
     // cout<<"std::log1p: "<<std::log1p(0.05);
     //test_exception();
     test_decltype();
-    test_tuple();
-    test_rand();
+    //test_tuple();
+    //test_rand();
 }
