@@ -22,7 +22,14 @@ namespace bfs = boost::filesystem;
 using namespace std;
 
 void test_rand(){
-    
+    cout<<"test rand in"<<endl;
+    srand(time(0));
+    //srand(1);
+    cout<<"rand:"<<rand()<<" "<<rand()<<" "<<rand()<<endl;
+    //srand(time(0)+1);
+    srand(1);
+    srand(time(0)+1);
+    cout<<"rand:"<<rand()<<" "<<rand()<<" "<<rand()<<endl;
 }
 
 void test_exception(){
