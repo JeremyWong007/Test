@@ -25,19 +25,28 @@ using namespace std;
 class A_base
 {
 public:
-    int j;
-    virtual void func() {}
+    int i=22;
+    virtual void func() {
+        cout<<"call A_base's func"<<i<<endl;
+    }
     virtual void func2() {}
     virtual void func3() {}
 };
 class B : public A_base
 {
-    //int j;
-    void func() {}
+    public:
+    int i=33;
+    void func() {
+        cout<<"call B's func"<<i<<endl;
+    }
 };
 void test_virtual(){
     ilog("test_virtual in");
-    cout << sizeof(A_base) << ", " << sizeof(B)<<endl;
+    cout<<"size:" << sizeof(A_base) << ", " << sizeof(B)<<endl;
+    B bb;
+    bb.i = 55;
+    bb.func();
+    bb.A_base::func();
 }
 
 //test_enable_if
