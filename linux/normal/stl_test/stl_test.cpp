@@ -21,6 +21,26 @@ namespace bfs = boost::filesystem;
 
 using namespace std;
 
+//test_virtual
+class A_base
+{
+public:
+    int j;
+    virtual void func() {}
+    virtual void func2() {}
+    virtual void func3() {}
+};
+class B : public A_base
+{
+    //int j;
+    void func() {}
+};
+void test_virtual(){
+    ilog("test_virtual in");
+    cout << sizeof(A_base) << ", " << sizeof(B)<<endl;
+}
+
+//test_enable_if
 class Apple{
     public:
     const static bool value = true;
@@ -821,4 +841,5 @@ void test_std()
     //test_tuple();
     //test_rand();
     //test_enable_if();
+    test_virtual();
 }
