@@ -21,6 +21,38 @@ namespace bfs = boost::filesystem;
 
 using namespace std;
 
+class Apple{
+    public:
+    const static bool value = true;
+};
+class Orangle{
+    public:
+    const static bool value = true;
+};
+template<typename T, typename T1=void>
+class check;
+template<typename T>
+class check<T, typename std::enable_if<T::value>::type>{
+    private:
+    bool value = T::value;
+};
+template<typename T>
+typename std::enable_if<std::is_integral<T>::value, bool>::type
+is_odd(T t){
+    return bool(t % 2);
+}
+//template <typename T, typename = typename std::enable_if<std::is_integral<T>::value>::type>
+template <typename T, typename = typename std::enable_if<std::is_integral<T>::value>::type>
+bool is_even(T t) {
+  return !is_odd(t); 
+}
+
+void test_enable_if(){
+    ilog("test enable_if in");
+    check<Apple> a;
+    is_odd(12);
+    is_even<>(12);
+}
 
 void test_rand(){
     cout<<"test rand in"<<endl;
@@ -129,6 +161,7 @@ void test_decltype(){
     cout<<b<<c<<ri<<"temp="<<temp<<"pf:"<<pf(i,i);
 
     decltype(std::declval<A>().value()) a=0;  //int a
+    (void)a;
 }
 
 void test_exception(){
@@ -787,4 +820,5 @@ void test_std()
     //test_decltype();
     //test_tuple();
     //test_rand();
+    //test_enable_if();
 }
