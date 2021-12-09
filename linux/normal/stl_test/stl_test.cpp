@@ -31,22 +31,45 @@ public:
     }
     virtual void func2() {}
     virtual void func3() {}
+    void func5(){}
+private:
+    int j=12;
 };
-class B : public A_base
+class A_base1{
+    public:
+    int i=44;
+    virtual void func4(){
+        cout<<"call A_base1's func"<<i<<endl;
+    }
+    void func5(){}
+};
+class C{
+    protected:
+    int i=66;
+};
+//多重继承时，会有多个函数表。
+class B : public A_base, public A_base1
 {
     public:
-    int i=33;
     void func() {
         cout<<"call B's func"<<i<<endl;
+        //父类的私有成员，子类内部也无法访问
+        //cout<<"j="<<j<<endl;
     }
+    
+    public:
+    int i=33;
 };
 void test_virtual(){
     ilog("test_virtual in");
     cout<<"size:" << sizeof(A_base) << ", " << sizeof(B)<<endl;
     B bb;
     bb.i = 55;
+    bb.A_base::i=66;
     bb.func();
     bb.A_base::func();
+    bb.A_base1::func5();
+    //bb.func5();  //两个基类中都有func5，编译报错，提示有歧义
 }
 
 //test_enable_if
@@ -343,20 +366,6 @@ private:
     friend class wife;
     friend class husband;
 };
-class wife{
-    public:
-    void myhouse(family f){
-        cout<<"wife in "<<f.house<<endl;
-    }
-    void mycar(family f){
-        cout<<f.car;
-    }
-    friend void call(wife &w){
-        cout<<"call wife "<<w.name<<endl;
-    }
-    private:
-    string name="pretty girl";
-};
 
 class husband{
     public:
@@ -366,8 +375,27 @@ class husband{
     void mycar(family f){
         cout<<f.car;
     }
+    void call(wife w);
 };
-
+class wife{
+    public:
+    void myhouse(family f){
+        cout<<"wife in "<<f.house<<endl;
+    }
+    void mycar(family f){
+        cout<<f.car;
+    }
+    //类内定义的友元函数，实际是全局函数
+    friend void call(wife &w){
+        cout<<"call wife "<<w.name<<endl;
+    }
+    private:
+    string name="pretty girl";
+    friend void husband::call(wife w);
+};
+void husband::call(wife w){
+    cout<<"husband call "<<w.name;
+}
 
 void test_friend(){
     cout<<"friend start."<<endl;
@@ -377,6 +405,7 @@ void test_friend(){
     m.myhouse(f);
     w.myhouse(f);
     call(w);
+    m.call(w);
 }
 
 #include <limits>
@@ -832,7 +861,7 @@ void test_std()
     // test_ofstream();
     // test_sstream();
     // test_path();
-    // test_friend();
+     test_friend();
     // test_operator();
     // test_typeid();
     // test_yinyong();
@@ -850,5 +879,5 @@ void test_std()
     //test_tuple();
     //test_rand();
     //test_enable_if();
-    test_virtual();
+    //test_virtual();
 }
