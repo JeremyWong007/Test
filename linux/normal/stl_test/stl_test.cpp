@@ -25,7 +25,7 @@ void test_set(){
     ilog("test set in");
     std::vector<int> v = {11,22,33,44,55};
     std::set<int> s(v.begin(),v.end());
-    for(int i=0; i<s.size(); i++){
+    for(int i=0; i<(int)s.size(); i++){
         //cout<<" "<<s[i]<<endl;
     }
 }

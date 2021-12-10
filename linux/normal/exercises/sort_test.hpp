@@ -13,7 +13,7 @@ public:
     ~sort_test();
 
     void insert_sort(){
-        for(int i=0; i<inputVector.size(); i++){
+        for(int i=0; i<(int)inputVector.size(); i++){
             for(int j=i; j>0; j--){
                 if(inputVector[j] < inputVector[j-1]){
                     int tmp = inputVector[j];
@@ -23,7 +23,7 @@ public:
             }
         }
         cout<<"insert_sort:";
-        for(int i=0; i<inputVector.size(); i++){
+        for(int i=0; i<(int)inputVector.size(); i++){
             cout<<" "<<inputVector[i];
         }
         cout<<endl;

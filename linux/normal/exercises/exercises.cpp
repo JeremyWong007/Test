@@ -10,18 +10,18 @@ class solution{
     public:
     void moverZero(vector<int> &v){
         int i=0,j=0,k=0;
-        for(;i<v.size();i++){
+        for(;i<(int)v.size();i++){
             if(v[i]){
                 v[k++]=v[i];
             }
         }
-        for(j=k;j<v.size();j++){
+        for(j=k;j<(int)v.size();j++){
             v[j]=0;
         }
     }
     
     void mov(vector<int> &v, int pos){
-        for(int i=pos;i<v.size();i++){
+        for(int i=pos;i<(int)v.size();i++){
             v[i]=v[i+1];
         }
     }
@@ -37,11 +37,12 @@ class solution{
                 }
             }
         }
+        return 0;
     }
     int removeDuplicates(vector<int> &nums) {
         int k = 0;
         if (nums.size() == 0) return 0;
-        for (int i = 1; i < nums.size(); ++i)
+        for (int i = 1; i < (int)nums.size(); ++i)
             if (nums[i] != nums[k])
                 nums[++k] = nums[i];
         return k + 1;
@@ -51,9 +52,9 @@ class solution{
         int sub=0;
         int pos=0;
         bool sucess=false;
-        for(int i=0;i<v.size()-1;i++){
+        for(int i=0;i<(int)v.size()-1;i++){
             sub=v[i];
-            for(int j=i+1;(j<v.size())&&(j-i+1<=minlen);j++){
+            for(int j=i+1;(j<(int)v.size())&&(j-i+1<=minlen);j++){
                 sub+=v[j];
                 if(sub>=s){
                     sucess=true;
@@ -74,8 +75,8 @@ class solution{
         int ans = nums.size() + 1;
         int sum = 0;
         int pos=0;
-        while (l < nums.size()) {
-            if (r + 1 < nums.size() && sum < s)
+        while (l < (int)nums.size()) {
+            if (r + 1 < (int)nums.size() && sum < s)
                 sum += nums[++r];
             else
                 sum -= nums[l++];
@@ -87,7 +88,7 @@ class solution{
                 ans = min(ans, r - l + 1);
             }
         }
-        if (ans == nums.size() + 1)
+        if (ans == (int)nums.size() + 1)
             return 0;
         cout<<"ans="<<ans<<"pos="<<pos<<"r="<<r<<endl;
         return ans;
@@ -98,11 +99,10 @@ class solution{
     int minVector2(int s, vector<int> v){
         int l = 0,r = -1;
         int sum = 0;
-        int len = v.size();
-        int minlen = v.size()+1;
+        int minlen = (int)v.size()+1;
         int pos = 0;
-        while(l < v.size()){
-            if((sum < s)&&(r+1 < v.size())){
+        while(l < (int)v.size()){
+            if((sum < s)&&(r+1 < (int)v.size())){
                 sum += v[++r];
             }
             else{
