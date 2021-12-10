@@ -1,6 +1,8 @@
 #include <iostream>
 #include <list>
 #include "../common.h"
+#include "sort_test.hpp"
+#include <functional>
 
 using namespace std;
 
@@ -150,6 +152,7 @@ class solution{
 int exercises(){
     std::cout<<"****************************************************************************************************************************************"<<std::endl;
     ilog("exercises in");
+    #if 0
     vector<int> v{0,0,3,1,1,3,1,3,2,3,2,4,4};
     cout<<v[0]<<v[1]<<v[2]<<v[3]<<v[4]<<endl;
     solution a;
@@ -165,5 +168,10 @@ int exercises(){
     list<int> l1={1,1,4,6,9};
     list<int> l2={0,3,5,5,7,11,13,14,9999};
     a.merge(l1,l2);
+    #endif
+    sort_test testsort;
+    std::function<void(void)> f = std::bind(&sort_test::insert_sort, testsort);
+    tools::test_runTime<>(f);
+    
     return 0;
 }

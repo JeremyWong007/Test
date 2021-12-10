@@ -21,6 +21,15 @@ namespace bfs = boost::filesystem;
 
 using namespace std;
 
+void test_set(){
+    ilog("test set in");
+    std::vector<int> v = {11,22,33,44,55};
+    std::set<int> s(v.begin(),v.end());
+    for(int i=0; i<s.size(); i++){
+        //cout<<" "<<s[i]<<endl;
+    }
+}
+
 //test_virtual
 class A_base
 {
@@ -880,4 +889,5 @@ void test_std()
     //test_rand();
     //test_enable_if();
     //test_virtual();
+    test_set();
 }
