@@ -171,8 +171,6 @@ int exercises(){
     a.merge(l1,l2);
     #endif
     sort_test testsort;
-    std::function<void(void)> f = std::bind(&sort_test::insert_sort, testsort);
-    tools::test_runTime<>(f);
     
     return 0;
 }

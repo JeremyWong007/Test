@@ -15,7 +15,13 @@ public:
 
     // template<typename Func, typename... Args>
     // static void test_runTime(Func f, Args... a){
+    //     timeval time_start,time_end;
+    //     gettimeofday(&time_start, nullptr);
     //     f(a...);
+    //     gettimeofday(&time_end, nullptr);
+    //     cout<<"Run type2 func time: "<< 
+    //     (time_end.tv_sec - time_start.tv_sec) * 1000000 + time_end.tv_usec - time_start.tv_usec 
+    //     <<" us"<<endl;
     // }
     template<typename Func>
     static void test_runTime(Func f, string name=""){
