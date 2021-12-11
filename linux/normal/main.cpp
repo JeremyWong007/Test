@@ -7,15 +7,15 @@
 #include <locale.h>
 #include <libintl.h>
 #include "common.h"
+#include "stl_test/stl_test.hpp"
+#include "boost_test/boost_test.hpp"
+#include "sundries/sundries_test.hpp"
+#include "exercises/exercises.hpp"
 
 log4cpp::Category& root = log4cpp::Category::getRoot();
 log4cpp::Category& mainCategory = root.getInstance("main");
 
 using namespace std;
-
-extern void test_std();
-extern void sundries_test();
-extern int exercises();
 
 #define LOCALEDIR "/usr/share/locale/"      /* 设置 mo 文件所在基目录(该目录下会有 zh_CN, zh_TW 等等这些目录) */
 #define PACKAGE "foonly"    /* 函数的第 1 个参数 domainname */
@@ -44,11 +44,11 @@ int main(void)
         log4cpp::PropertyConfigurator::configure(initFileName);
         ilog("Application Test start");
 
-        test_boost();
-        test_std();
-        sundries_test();
-        //tmp_test();
-        exercises();
+        boost_test t_boost;
+        stl_test t_stl;
+        sundries_test t_sundries;
+        exercises exec;
+        
         #ifdef SHOWSTR
         //    cout<<"In TEST_IN_LINUX"<<endl;
         #else

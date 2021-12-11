@@ -41,7 +41,16 @@ void say(int a,int b=10,int c=11)
     cout<<"say:"<<a<<b<<c<<endl;
 }
 
-void sundries_test()
+class sundries_test
+{
+private:
+    /* data */
+public:
+    sundries_test(/* args */);
+    ~sundries_test();
+};
+
+sundries_test::sundries_test(/* args */)
 {
     std::cout<<"****************************************************************************************************************************************"<<std::endl;
     ilog("sundries test start");
@@ -50,4 +59,8 @@ void sundries_test()
     // say(1,2,3);
     // test_fucptr();
     // test_show();
+}
+
+sundries_test::~sundries_test()
+{
 }

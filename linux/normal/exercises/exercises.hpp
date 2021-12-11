@@ -150,7 +150,17 @@ class solution{
     }
 };
 
-int exercises(){
+class exercises
+{
+private:
+    /* data */
+public:
+    exercises(/* args */);
+    ~exercises();
+};
+
+exercises::exercises(/* args */)
+{
     std::cout<<"****************************************************************************************************************************************"<<std::endl;
     ilog("exercises in");
     #if 0
@@ -171,6 +181,8 @@ int exercises(){
     a.merge(l1,l2);
     #endif
     sort_test testsort;
-    
-    return 0;
+}
+
+exercises::~exercises()
+{
 }

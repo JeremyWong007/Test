@@ -273,9 +273,18 @@ void test_tuple1()
     std::cout<<tt<<std::endl;
 }
 
-void test_boost(void)
+class boost_test
 {
-    std::cout<<"****************************************************************************************************************************************"<<std::endl;
+private:
+	/* data */
+public:
+	boost_test(/* args */);
+	~boost_test();
+};
+
+boost_test::boost_test(/* args */)
+{
+	std::cout<<"****************************************************************************************************************************************"<<std::endl;
     ilog("Test boost begin");
     //test_tuple1();
     //test_bind();
@@ -287,4 +296,8 @@ void test_boost(void)
     //test_client();
     //test_asio();
     //test_signal2();
+}
+
+boost_test::~boost_test()
+{
 }

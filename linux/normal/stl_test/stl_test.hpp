@@ -14,117 +14,16 @@
 #include <cmath>
 #include "StlTestForClass.hpp"
 #include "../common.h"
+#include "test_set.hpp"
+#include "test_virtual.hpp"
+#include "test_enable_if.hpp"
+#include "test_rand.hpp"
 
 log4cpp::Category& stlCategory = root.getInstance("stl");
 
 namespace bfs = boost::filesystem;
 
 using namespace std;
-
-void test_set(){
-    ilog("test set in");
-    std::vector<int> v = {11,22,33,44,55};
-    std::set<int> s(v.begin(),v.end());
-    for(int i=0; i<(int)s.size(); i++){
-        //cout<<" "<<s[i]<<endl;
-    }
-}
-
-//test_virtual
-class A_base
-{
-public:
-    int i=22;
-    virtual void func() {
-        cout<<"call A_base's func"<<i<<endl;
-    }
-    virtual void func2() {}
-    virtual void func3() {}
-    void func5(){}
-private:
-    int j=12;
-};
-class A_base1{
-    public:
-    int i=44;
-    virtual void func4(){
-        cout<<"call A_base1's func"<<i<<endl;
-    }
-    void func5(){}
-};
-class C{
-    protected:
-    int i=66;
-};
-//多重继承时，会有多个函数表。
-class B : public A_base, public A_base1
-{
-    public:
-    void func() {
-        cout<<"call B's func"<<i<<endl;
-        //父类的私有成员，子类内部也无法访问
-        //cout<<"j="<<j<<endl;
-    }
-    
-    public:
-    int i=33;
-};
-void test_virtual(){
-    ilog("test_virtual in");
-    cout<<"size:" << sizeof(A_base) << ", " << sizeof(B)<<endl;
-    B bb;
-    bb.i = 55;
-    bb.A_base::i=66;
-    bb.func();
-    bb.A_base::func();
-    bb.A_base1::func5();
-    //bb.func5();  //两个基类中都有func5，编译报错，提示有歧义
-}
-
-//test_enable_if
-class Apple{
-    public:
-    const static bool value = true;
-};
-class Orangle{
-    public:
-    const static bool value = true;
-};
-template<typename T, typename T1=void>
-class check;
-template<typename T>
-class check<T, typename std::enable_if<T::value>::type>{
-    private:
-    bool value = T::value;
-};
-template<typename T>
-typename std::enable_if<std::is_integral<T>::value, bool>::type
-is_odd(T t){
-    return bool(t % 2);
-}
-//template <typename T, typename = typename std::enable_if<std::is_integral<T>::value>::type>
-template <typename T, typename = typename std::enable_if<std::is_integral<T>::value>::type>
-bool is_even(T t) {
-  return !is_odd(t); 
-}
-
-void test_enable_if(){
-    ilog("test enable_if in");
-    check<Apple> a;
-    is_odd(12);
-    is_even<>(12);
-}
-
-void test_rand(){
-    cout<<"test rand in"<<endl;
-    srand(time(0));
-    //srand(1);
-    cout<<"rand:"<<rand()<<" "<<rand()<<" "<<rand()<<endl;
-    //srand(time(0)+1);
-    srand(1);
-    srand(time(0)+1);
-    cout<<"rand:"<<rand()<<" "<<rand()<<" "<<rand()<<endl;
-}
 
 template<typename Tuple, size_t N>
 struct tuple_show
@@ -407,7 +306,7 @@ void husband::call(wife w){
 }
 
 void test_friend(){
-    cout<<"friend start."<<endl;
+    ilog("test friend in.");
     family f;
     husband m;
     wife w;
@@ -849,9 +748,18 @@ enum class rr{
 };
 
 extern int test_smartptr();
-void test_std()
+
+class stl_test
 {
-    
+private:
+    /* data */
+public:
+    stl_test(/* args */);
+    ~stl_test();
+};
+
+stl_test::stl_test(/* args */)
+{
     //cout<<"result:"<<int(rr::OK)<<endl;
     //cout<<"result:"<<int(Result1::Ok)<<int(Result1::Returned);
     std::cout<<"****************************************************************************************************************************************"<<std::endl;
@@ -870,7 +778,7 @@ void test_std()
     // test_ofstream();
     // test_sstream();
     // test_path();
-     test_friend();
+    test_friend();
     // test_operator();
     // test_typeid();
     // test_yinyong();
@@ -886,8 +794,12 @@ void test_std()
     //test_exception();
     //test_decltype();
     //test_tuple();
-    //test_rand();
-    //test_enable_if();
-    //test_virtual();
-    test_set();
+    test_rand t_rand;
+    test_enable_if t_enable_if;
+    test_virtual t_virtual;
+    //test_set t_set;
+}
+
+stl_test::~stl_test()
+{
 }

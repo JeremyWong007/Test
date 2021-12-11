@@ -7,6 +7,7 @@ log4cpp使用说明：
 1 https://github.com/orocos-toolchain/log4cpp
 2 mkdir build; cd build/; cmake ..; make -j8; sudo make install
 */
+#pragma once
 #include <log4cpp/Category.hh>
 #include <log4cpp/OstreamAppender.hh>
 #include <log4cpp/Priority.hh>
