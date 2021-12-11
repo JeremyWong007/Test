@@ -3,6 +3,7 @@
 #include "../common.h"
 #include "sort_test.hpp"
 #include <functional>
+#include "../tools.hpp"
 
 using namespace std;
 

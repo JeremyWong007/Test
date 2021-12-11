@@ -20,4 +20,3 @@ extern log4cpp::Category& mainCategory;
 #define ilog(__fmt__, ...)   mainCategory.info(__format(__fmt__),__FILE__, __LINE__,##__VA_ARGS__)
 #define elog(__fmt__, ...)   mainCategory.error(__format(__fmt__),__FILE__, __LINE__,##__VA_ARGS__)
 
-#include "tools.hpp"
