@@ -4,7 +4,7 @@ PROJECT(TEST)
 
 #自己定制
 SET(MY_TARGET test1)
-SET(MY_LINK boost_test stl_test sundries_test exercises)
+SET(MY_LINK boost_test stl_test)
 
 #设置编译器
 SET(CMAKE_CXX_COMPILER "g++")

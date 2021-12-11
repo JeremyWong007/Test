@@ -333,7 +333,7 @@ void test_numeric_limits()
 
 using int16bye=int;
 using vectorv = vector<int>;
-struct name;
+struct name2;
 bfs::path determine_home_directory()
 {
    bfs::path home;
@@ -430,19 +430,19 @@ void test_hash(void)
     // using dd = vector<int>;
 }
 
- struct name {
+ struct name2 {
    private:
       __uint128_t value = 0;
 
    public:
-      constexpr explicit name( uint64_t v ) {
+      constexpr explicit name2( uint64_t v ) {
          value = static_cast<__uint128_t>(v);
       }
-      constexpr explicit name( int64_t v ) {
+      constexpr explicit name2( int64_t v ) {
          value = static_cast<__uint128_t>(v);
       }
-      constexpr explicit name( __uint128_t v ) : value(v) {}
-      constexpr name() = default;
+      constexpr explicit name2( __uint128_t v ) : value(v) {}
+      constexpr name2() = default;
       constexpr uint64_t to_uint64_t()const { return static_cast<uint64_t>(value); }
  };
 
@@ -452,20 +452,20 @@ void test_uint128(void)
     __int64_t b=11;
     a=b;
     cout<<b<<endl;
-    name cc(b);
-    name dd(a);
+    name2 cc(b);
+    name2 dd(a);
     //cout<<a<<endl;
 }
 
 template<typename T1,typename T2,typename T3>
-void func1(T2 a){
+void func11(T2 a){
     cout<<"fucn1:"<<a<<endl;
 }
 
 template<typename T1,typename T2,typename T3>
 struct st1{
     template<typename T4>
-    void func1(T4 a){
+    void func11(T4 a){
         cout<<"fucn1:"<<a<<endl;
     }
 };
@@ -524,10 +524,10 @@ class app{
 
 void test_template(){
     cout<<"test template start"<<endl;
-    func1<int,int,int>(9);
+    func11<int,int,int>(9);
     st1<int,int,string> s1;
-    s1.template func1("tt");
-    s1.func1("HaHa");
+    s1.template func11("tt");
+    s1.func11("HaHa");
     /*
     总结：
     1 template的最后一个模板参数与函数入参相同时可以省略。如果不是最后一个参数，不可以省略。

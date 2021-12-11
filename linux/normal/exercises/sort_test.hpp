@@ -31,8 +31,18 @@ public:
         cout<<endl;
     }
 
-    void xier_sort(){
-
+    void shell_sort(){
+        int j;
+        int gap = inputVector.size() / 2;
+        for(; gap>0; gap=gap/2){
+            for(int i=gap; i<(int)inputVector.size(); i++){
+                int tmp = inputVector[i];
+                for(j=i; j>gap&&inputVector[j-gap]<inputVector[j] ;j=j-gap){
+                    inputVector[j] = inputVector[j-gap];
+                }
+                inputVector[j] = tmp;
+            }
+        }
     }
     void test(int i, string str){
         cout<<"test "<<i<<" "<<str<<endl;
