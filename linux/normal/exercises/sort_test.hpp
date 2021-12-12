@@ -9,7 +9,7 @@ class sort_test
 {
 private:
     /* data */
-    std::vector<int> inputVector={1,3,2,8,4,2};
+    std::vector<int> inputVector={22,11,55,22,66,99,1,3,2,8,4,2};
 public:
     sort_test(/* args */);
     ~sort_test();
@@ -24,11 +24,6 @@ public:
                 }
             }
         }
-        cout<<"insert_sort:";
-        for(int i=0; i<(int)inputVector.size(); i++){
-            cout<<" "<<inputVector[i];
-        }
-        cout<<endl;
     }
 
     void shell_sort(){
@@ -37,7 +32,7 @@ public:
         for(; gap>0; gap=gap/2){
             for(int i=gap; i<(int)inputVector.size(); i++){
                 int tmp = inputVector[i];
-                for(j=i; j>gap&&inputVector[j-gap]<inputVector[j] ;j=j-gap){
+                for(j=i; j>=gap&&inputVector[j]<inputVector[j-gap] ;j-=gap){
                     inputVector[j] = inputVector[j-gap];
                 }
                 inputVector[j] = tmp;
@@ -56,8 +51,14 @@ sort_test::sort_test(/* args */)
 {
     ilog("test sort in");
     //insert_sort();
-    auto f = std::bind(&sort_test::insert_sort, this);
+    //auto f = std::bind(&sort_test::insert_sort, this);
+    auto f = std::bind(&sort_test::shell_sort, this);
     tools::test_runTime<>(f);
+    cout<<"sort:";
+    for(int i=0; i<(int)inputVector.size(); i++){
+        cout<<" "<<inputVector[i];
+    }
+    cout<<endl;
 }
 
 sort_test::~sort_test()
