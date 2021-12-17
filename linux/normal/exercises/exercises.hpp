@@ -4,6 +4,7 @@
 #include "sort_test.hpp"
 #include <functional>
 #include "../tools.hpp"
+#include "test_binary_tree.hpp"
 
 using namespace std;
 
@@ -180,7 +181,8 @@ exercises::exercises(/* args */)
     list<int> l2={0,3,5,5,7,11,13,14,9999};
     a.merge(l1,l2);
     #endif
-    sort_test testsort;
+    // sort_test testsort;
+    // test_binary_tree t_binary_tree;
 }
 
 exercises::~exercises()
