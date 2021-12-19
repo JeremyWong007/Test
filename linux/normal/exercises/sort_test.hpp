@@ -17,6 +17,9 @@ public:
     sort_test(/* args */);
     ~sort_test();
 
+    /*
+    插入排序
+    */
     void insert_sort(){
         for(int i=0; i<(int)inputVector.size(); i++){
             for(int j=i; j>0; j--){
@@ -116,6 +119,25 @@ public:
         }
     }
 
+    //二分查找
+    int erfen_find(std::vector<int>& v, int target){
+        int l = 0;
+        int r = v.size() - 1;
+        while(l < r){
+            int m = l + (r - l)/2;
+            if(v[m] == target){
+                return m;
+            }
+            if(target < v[m]){
+                r = m - 1;
+            }
+            else{
+                l = m + 1;
+            }
+        }
+        return -1;
+    }
+
     void test(int i, string str){
         cout<<"test "<<i<<" "<<str<<endl;
     }
@@ -137,7 +159,9 @@ sort_test::sort_test(/* args */)
     for(int i=0; i<(int)inputVector.size(); i++){
         cout<<" "<<inputVector[i];
     }
-    cout<<endl;
+    cout << endl;
+    int res = erfen_find(inputVector, 5);
+    cout << "erfine find resuldt: " << res << endl;
 }
 
 sort_test::~sort_test()
