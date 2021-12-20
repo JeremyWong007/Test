@@ -24,6 +24,7 @@
 #include "test_queue.hpp"
 #include "test_array.hpp"
 #include "test_stack.hpp"
+#include "test_list.hpp"
 
 log4cpp::Category& stlCategory = root.getInstance("stl");
 
@@ -709,6 +710,7 @@ stl_test::stl_test(/* args */)
     // test_queue t_equeue;
     // test_array t_array;
     // test_stack t_stack;
+    // test_list t_list;
 }
 
 stl_test::~stl_test()
