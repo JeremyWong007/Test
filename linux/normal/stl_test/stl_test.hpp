@@ -21,6 +21,9 @@
 #include "test_va_list.hpp"
 #include "test_tuple.hpp"
 #include "test_decltype.hpp"
+#include "test_queue.hpp"
+#include "test_array.hpp"
+#include "test_stack.hpp"
 
 log4cpp::Category& stlCategory = root.getInstance("stl");
 
@@ -703,6 +706,9 @@ stl_test::stl_test(/* args */)
     // test_virtual t_virtual;
     // test_set t_set;
     // test_va_list t_va;
+    // test_queue t_equeue;
+    // test_array t_array;
+    // test_stack t_stack;
 }
 
 stl_test::~stl_test()
