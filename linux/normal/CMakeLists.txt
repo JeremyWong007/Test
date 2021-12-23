@@ -52,6 +52,7 @@ link_directories("/usr/local/lib")
 
 #链接库
 link_libraries("/usr/local/lib/liborocos-log4cpp.so")
+link_libraries("/usr/local/lib/libsodium.so")
 
 #设置链接库
 SET(EXTRA_LIBS ${EXTRA_LIBS} ${MY_LINK})
