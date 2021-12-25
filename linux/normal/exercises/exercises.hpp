@@ -5,6 +5,7 @@
 #include <functional>
 #include "../tools.hpp"
 #include "test_binary_tree.hpp"
+#include "test_vrf.hpp"
 
 using namespace std;
 
@@ -183,6 +184,7 @@ exercises::exercises(/* args */)
     #endif
     // sort_test testsort;
     // test_binary_tree t_binary_tree;
+    test_vrf t_vrf;
 }
 
 exercises::~exercises()
