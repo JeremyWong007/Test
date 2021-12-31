@@ -18,6 +18,9 @@ function test_sed(){
     echo "test sed start"
     sed  's/123/hello/'   r.txt   #将文件中的123替换为hello，默认只替换每行第一个123
     sed  -i 's/123/hello/'   w.txt   #将文件中的123替换为hello，默认只替换每行第一个123
+
+    str=00123
+    num=`echo $str | sed -r 's/^0+//'` #将str开头的0去除
 }
 function test_string(){
     echo "#############################测试字符处理#############################"
