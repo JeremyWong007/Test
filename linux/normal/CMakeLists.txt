@@ -2,13 +2,16 @@ CMAKE_MINIMUM_REQUIRED( VERSION 3.8 )
 
 PROJECT(TEST)
 
-#自己定制
+#可配置编译选项
+#关闭方法：cmake -DLibSodium=OFF ..
+option(LibSodium "Use LibSodium library." ON)
+MESSAGE(STATUS "LibSodium is " ${LibSodium})
+
 SET(MY_TARGET test1)
 SET(MY_LINK boost_test stl_test)
 
 #设置编译器
 SET(CMAKE_CXX_COMPILER "g++")
-
 MESSAGE(STATUS "This is BINARY dir " ${TEST_BINARY_DIR})
 MESSAGE(STATUS "This is SOURCE dir " ${TEST_SOURCE_DIR})
 
@@ -52,8 +55,11 @@ link_directories("/usr/local/lib")
 
 #链接库
 link_libraries("/usr/local/lib/liborocos-log4cpp.so")
-link_libraries("/usr/local/lib/libsodium.so")
-
+if(LibSodium)
+  MESSAGE("LibSodium enable")
+  link_libraries("/usr/local/lib/libsodium.so")
+  add_definitions(-DLIBSODIUM)
+endif(LibSodium)
 #设置链接库
 SET(EXTRA_LIBS ${EXTRA_LIBS} ${MY_LINK})
 

@@ -5,7 +5,9 @@
 #include <functional>
 #include "../tools.hpp"
 #include "test_binary_tree.hpp"
-#include "test_vrf.hpp"
+#ifdef LIBSODIUM
+     #include "test_vrf.hpp"
+#endif
 
 using namespace std;
 
@@ -184,7 +186,9 @@ exercises::exercises(/* args */)
     #endif
     // sort_test testsort;
     // test_binary_tree t_binary_tree;
-    test_vrf t_vrf;
+    #ifdef LIBSODIUM
+        test_vrf t_vrf;
+    #endif
 }
 
 exercises::~exercises()
