@@ -33,4 +33,20 @@ public:
         (time_end.tv_sec - time_start.tv_sec) * 1000000 + time_end.tv_usec - time_start.tv_usec \
         <<" us"<<endl;
     }
+
+    template<typename T>
+    static void to_string(string& str, const T& input){
+        ostringstream oss;
+        oss << input;
+        str = oss.str();
+    }
+
+    template<typename Outtype, typename Intype>
+    static Outtype convert(const Intype in){
+        stringstream ss;
+        ss << in;
+        Outtype result;
+        ss >> result;
+        return result;
+    }
 };
