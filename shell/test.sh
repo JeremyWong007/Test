@@ -22,24 +22,6 @@ function test_sed(){
     str=00123
     num=`echo $str | sed -r 's/^0+//'` #将str开头的0去除
 }
-function test_string(){
-    echo "#############################测试字符处理#############################"
-    str="24332 pts/11   00:00:00 tafcored"
-    str1=${str:0:5}  #从左边开始截取
-    str2=${str:0-8:8}  #从右边开始截取
-    echo $str
-    echo $str1
-    echo $str2
-    url="http://c.biancheng.net/index.html"
-    echo ${url#*/}  #截去头部（左边） 取第一个/的右边
-    echo ${url##*/} #截去头部（左边） 取最后第一个/的右边
-    path="/data/info/git/test/shell"
-    echo ${path%shell} #截去尾部（右边） 去掉shell
-    text=" 123 456 "
-    text=${text/ /-}  #只替换一个
-    text=${text// /-}  #全部替换
-    echo "2014年7月21日" | tr -cd "[0-9]" #从字符串中提取数字
-}
 
 function test_net(){
     echo "test net start"
@@ -247,6 +229,5 @@ test_readonly
 test_array
 test_map
 test_yunsuanfu
-test_string
 test_sed
 test_linux_cmd
