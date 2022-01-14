@@ -3,7 +3,8 @@ CMAKE_MINIMUM_REQUIRED( VERSION 3.8 )
 PROJECT(TEST)
 
 #可配置编译选项
-#关闭方法：cmake -DLibSodium=OFF ..
+#设置为Debug编译: cmake .. -DCMAKE_BUILD_TYPE=Debug  
+#关闭方法：cmake .. -DLibSodium=OFF ..
 option(LibSodium "Use LibSodium library." ON)
 MESSAGE(STATUS "LibSodium is " ${LibSodium})
 
@@ -20,7 +21,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 #设置构建类型，及相应的编译选项
-SET(CMAKE_BUILD_TYPE "Debug")
+#SET(CMAKE_BUILD_TYPE "Debug")
 #SET(CMAKE_BUILD_TYPE "Release")
 SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
 SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall -DNDEBUG")
