@@ -2,6 +2,8 @@
 #include <vector>
 #include <map>
 #include "../common.h"
+#include "test_dump.hpp"
+
 log4cpp::Category& sundryCategory = root.getInstance("sundry");
 
 using namespace std;
@@ -54,6 +56,7 @@ sundries_test::sundries_test(/* args */)
 {
     std::cout<<"****************************************************************************************************************************************"<<std::endl;
     ilog("sundries test start");
+    test_dump t_dump;
     // say(1);
     // say(1,2);
     // say(1,2,3);
