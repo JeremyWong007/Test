@@ -1,3 +1,9 @@
+/*
+编译：
+g++ main.cpp -o test
+g++ main.cpp -o test -g  增加调试信息
+*/
+
 #include <iostream>
 
 using namespace std;

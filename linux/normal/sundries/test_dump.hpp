@@ -6,6 +6,12 @@ echo '/tmp/core_%e.%p' | sudo tee /proc/sys/kernel/core_pattern
 ulimit -c unlimited 【打开新的终端时，需要重新设置】
 [注意：ubuntu18.04重启后core_uses_pid和core_pattern的配置会丢失]
 
+core后分析：
+确认core文件格式： file /tmp/core_test1.11211
+命令： gdb ./test1 /tmp/core_test1.11211
+test1为执行程序，core_test1.11211为生成的coredump文件。
+bt 查看栈信息
+
 设置limits.conf（可省略）：
 临时设置： ulimit -c unlimited 
 永久设置： vim /etc/security/limits.conf 添加：
@@ -63,7 +69,7 @@ test_dump::test_dump(/* args */)
     ilog("test dump in");
     //    char vv[2048*2048]={0};
     //    std::cout<<__FILE__<<":"<<std::dec<<__LINE__<<"  "<<__func__<<std::endl;
-    stackLimit();
+    //stackLimit();
     //dividZero();
     //writeToAddrZero();
     //core_test1();
