@@ -8,6 +8,7 @@
 #ifdef LIBSODIUM
      #include "test_vrf.hpp"
 #endif
+#include "shuati.hpp"
 
 using namespace std;
 
@@ -189,6 +190,7 @@ exercises::exercises(/* args */)
     #ifdef LIBSODIUM
         test_vrf t_vrf;
     #endif
+    shuati t_shuati;
 }
 
 exercises::~exercises()
