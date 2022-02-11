@@ -644,8 +644,8 @@ stl_test::stl_test(/* args */)
     // test_stack t_stack;
     // test_list t_list;
     // test_heap t_heap;
-    test_string t_str;
-    test_stream t_stream;
+    //test_string t_str;
+    //test_stream t_stream;
 }
 
 stl_test::~stl_test()

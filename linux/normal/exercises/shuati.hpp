@@ -54,12 +54,45 @@ public:
             b = q[i];
         }
     }
+
+    /*题目：
+    有一款游戏，过关的方式是按按钮。
+    游戏一共有n关，每一关有a[i]个按钮，其中只有唯一一个按钮是可以通关的，按下其他的按钮游戏就会失败。
+    好在这个游戏可以重来，而且由于设计者的疏忽，每一关的通关按钮是不变的，所以你可以记住前几关的按钮，重来时就可以直接通关。
+    但是...你的运气似乎用在了其他地方，你使用了最多的按按钮次数才成功通关。
+    求这个最多的按按钮次数吧！
+    */
+    void tongguan(){
+        vector<char> gate={3,2,2,8,9,22};
+        //方案一：模拟通关过程
+        vector<char> gate2(gate);
+        int n=0;
+        for(int i=0; i<gate2.size(); ){
+            if(gate2[i] != 1){
+                gate2[i]--;
+                i=0;
+                n++;
+            }
+            else{
+                n++;
+                cout<<"i="<<i<<" n="<<n<<endl;
+                i++;
+            }
+        }
+        //方案二：f(i)=f(i-1)+1+(gate[i]-1)*(i+1)
+        n=gate[0];
+        for(int i=1; i<gate.size(); i++){
+            n = n + 1 + (gate[i] - 1)*(i + 1);
+        }
+        cout<<"plan2: n="<<n<<endl;
+    }
 };
 
 shuati::shuati(/* args */)
 {
     ilog("shuati test in");
-    shuaqiang();
+    //shuaqiang();
+    tongguan();
 }
 
 shuati::~shuati()

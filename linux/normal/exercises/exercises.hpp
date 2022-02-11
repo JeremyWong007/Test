@@ -188,9 +188,9 @@ exercises::exercises(/* args */)
     // sort_test testsort;
     // test_binary_tree t_binary_tree;
     #ifdef LIBSODIUM
-        test_vrf t_vrf;
+        //test_vrf t_vrf;
     #endif
-    shuati t_shuati;
+    //shuati t_shuati;
 }
 
 exercises::~exercises()

@@ -56,7 +56,7 @@ sundries_test::sundries_test(/* args */)
 {
     std::cout<<"****************************************************************************************************************************************"<<std::endl;
     ilog("sundries test start");
-    test_dump t_dump;
+    //test_dump t_dump;
     // say(1);
     // say(1,2);
     // say(1,2,3);
