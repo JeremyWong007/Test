@@ -27,14 +27,14 @@ public:
         char b=1;
         int c_min=0;
         int c_red=0;
-        for(int i=0; i<q.size(); i++){
+        for(uint i=0; i<q.size(); i++){
             if(q[i] == 1){
                 c_red++;
             }
         }
         c_min=c_red;
 
-        for(int i=0; i<q.size(); i++){
+        for(uint i=0; i<q.size(); i++){
             if(q[i] != b){
                 if(q[i] == 0){
                     if(c_blue+c_red < c_min){
@@ -67,7 +67,7 @@ public:
         //方案一：模拟通关过程
         vector<char> gate2(gate);
         int n=0;
-        for(int i=0; i<gate2.size(); ){
+        for(uint i=0; i<gate2.size(); ){
             if(gate2[i] != 1){
                 gate2[i]--;
                 i=0;
@@ -81,7 +81,7 @@ public:
         }
         //方案二：f(i)=f(i-1)+1+(gate[i]-1)*(i+1)
         n=gate[0];
-        for(int i=1; i<gate.size(); i++){
+        for(uint i=1; i<gate.size(); i++){
             n = n + 1 + (gate[i] - 1)*(i + 1);
         }
         cout<<"plan2: n="<<n<<endl;

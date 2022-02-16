@@ -2,8 +2,23 @@
 #include <time.h>
 #include <sys/time.h>
 #include <string>
+#include <list>
 
 using namespace std;
+
+template<typename T>
+void print(T a)
+{
+    cout << "print: " << a << endl;
+}
+template<typename T>
+void print(std::list<T> l){
+    cout << "print: ";
+    for(auto a : l){
+        cout << " " << a;
+    }
+    cout << endl;
+}
 
 class tools
 {

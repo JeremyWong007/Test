@@ -129,6 +129,12 @@ std::forward()和universal references通用引用共同实现完美转发。
 用empalce_back()替换push_back()增加性能。
 https://www.jianshu.com/p/d19fc8447eaa
 */
+
+int& getyinyong(){
+    static int cc=22;
+    print(cc);
+    return cc;
+}
 void test_yinyong(){
     cout<<"test yinyong start"<<endl;
     int b=11;
@@ -141,6 +147,9 @@ void test_yinyong(){
     cout<<"d="<<d<<endl;
     test_wanmeizhuanfa();
     
+    int& dd = getyinyong();
+    dd=55;
+    getyinyong();
 }
 
 class testTypeid{

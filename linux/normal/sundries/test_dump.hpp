@@ -35,17 +35,17 @@ public:
 
 void stackLimit(){
     char vv[2048*2048]={0};
-	std::cout<<__FILE__<<":"<<std::dec<<__LINE__<<"  "<<__func__<<std::endl;
+	std::cout<<__FILE__<<":"<<std::dec<<__LINE__<<"  "<<__func__<<vv[0]<<std::endl;
     char vv2[2048*2048]={0};
-	std::cout<<__FILE__<<":"<<std::dec<<__LINE__<<"  "<<__func__<<std::endl;
+	std::cout<<__FILE__<<":"<<std::dec<<__LINE__<<"  "<<__func__<<vv2[0]<<std::endl;
     char vv3[2048*2048]={0};
-	std::cout<<__FILE__<<":"<<std::dec<<__LINE__<<"  "<<__func__<<std::endl;
+	std::cout<<__FILE__<<":"<<std::dec<<__LINE__<<"  "<<__func__<<vv3[0]<<std::endl;
 }
 
 void dividZero(){
     std::cout<<"dividZero in"<<std::endl;
-    int c=10;
-    int d=c/0;
+    //int c=10;
+    //int d=c/0; //will call segmentfault
 }
 
 //提示：segfault at 0 ip 000055c924d09d80 sp 00007ffc3fee1f50 error 6 in test1[55c924cf3000+94000]
@@ -58,8 +58,8 @@ void writeToAddrZero(){
 void core_test1()
 {
     int i = 0;
-    //below will call segmentfault
-    scanf("%d", i);
+    //scanf("%d", i); //will call segmentfault
+    scanf("%d", &i);
     printf("%d", i);
 }
 

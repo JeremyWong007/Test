@@ -130,11 +130,9 @@ test_stream::test_stream(/* args */)
 {
     ilog("test stream in");
     string str="114 Hello", str3;
-    int i=0;
     stringstream sst;
     sst << "115";
     //sst >> str3;
-    cout << "i=" << str3 <<endl;
     //sst.clear();
     //sst.str("");
     sst << "haha";
