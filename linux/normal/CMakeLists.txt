@@ -12,7 +12,8 @@ SET(MY_TARGET test1)
 SET(MY_LINK boost_test stl_test)
 
 #设置编译器
-SET(CMAKE_CXX_COMPILER "g++")
+#SET(CMAKE_CXX_COMPILER "g++")
+#SET(CMAKE_CXX_COMPILER "clang++")
 MESSAGE(STATUS "This is BINARY dir " ${TEST_BINARY_DIR})
 MESSAGE(STATUS "This is SOURCE dir " ${TEST_SOURCE_DIR})
 

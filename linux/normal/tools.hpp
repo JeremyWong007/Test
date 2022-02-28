@@ -19,6 +19,14 @@ void print(std::list<T> l){
     }
     cout << endl;
 }
+template<typename T>
+void print(std::vector<T> l){
+    cout << "print: ";
+    for(auto a : l){
+        cout << " " << a;
+    }
+    cout << endl;
+}
 
 class tools
 {

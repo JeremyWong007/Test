@@ -28,6 +28,8 @@
 #include "test_heap.hpp"
 #include "test_string.hpp"
 #include "test_stream.hpp"
+#include "test_vector.hpp"
+#include "test_float.hpp"
 
 log4cpp::Category& stlCategory = root.getInstance("stl");
 
@@ -655,6 +657,8 @@ stl_test::stl_test(/* args */)
     // test_heap t_heap;
     //test_string t_str;
     //test_stream t_stream;
+    //test_vector();
+    test_float();
 }
 
 stl_test::~stl_test()

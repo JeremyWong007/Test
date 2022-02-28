@@ -9,6 +9,7 @@
      #include "test_vrf.hpp"
 #endif
 #include "shuati.hpp"
+#include "test_leetCodeShuati.hpp"
 
 using namespace std;
 
@@ -191,6 +192,7 @@ exercises::exercises(/* args */)
         //test_vrf t_vrf;
     #endif
     //shuati t_shuati;
+    test_leetCodeShuati t_leetCodeShuati;
 }
 
 exercises::~exercises()
