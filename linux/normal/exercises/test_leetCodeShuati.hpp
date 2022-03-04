@@ -213,6 +213,148 @@ public:
         }
         return fn;
     }
+    
+    void question2_1_20(vector<vector<int>>& vv){
+        vector<bool> row(vv.size(), false), column(vv[0].size(), false);
+        for(size_t i=0; i<vv.size(); i++){
+            for(size_t j=0; j<vv[0].size(); j++){
+                if(vv[i][j] == 0){
+                    row[i] = column[j] = true;
+                }
+            }
+        }
+        for(size_t i=0; i<vv.size(); i++){
+            if(row[i]){
+                for(size_t j=0; j<vv[0].size(); j++){
+                    vv[i][j] = 0;
+                }
+                //fill(&vv[i][0], &vv[i][0]+vv[0].size(), 0);
+            }
+        }
+        for(size_t j=0; j<vv[0].size(); j++){
+            if(column[j]){
+                for(size_t i=0; i<vv.size(); i++){
+                    vv[i][j] = 0;
+                }
+            }
+        }
+    }
+    
+    void question2_1_20_method2(vector<vector<int>>& vv){
+        vector<bool> row(vv.size(), false), column(vv[0].size(), false);
+        for(size_t i=0; i<vv.size(); i++){
+            for(size_t j=0; j<vv[0].size(); j++){
+                if(vv[i][j] == 0){
+                    row[i] = column[j] = true;
+                }
+            }
+        }
+        for(size_t i=0; i<vv.size(); i++){
+            if(row[i]){
+                for(size_t j=0; j<vv[0].size(); j++){
+                    vv[i][j] = 0;
+                }
+                //fill(&vv[i][0], &vv[i][0]+vv[0].size(), 0);
+            }
+        }
+        for(size_t j=0; j<vv[0].size(); j++){
+            if(column[j]){
+                for(size_t i=0; i<vv.size(); i++){
+                    vv[i][j] = 0;
+                }
+            }
+        }
+    }
+    
+    ListNode* question2_2_1(ListNode* l1, ListNode* l2){
+        ListNode* l = nullptr;
+        ListNode* l3 = l;
+        while(l1 != nullptr){
+            if(l3 == nullptr){
+                l3 = l = new ListNode(0);
+            }
+            else{
+                if(l3->next == nullptr){
+                    l3->next = new ListNode(0);
+                }
+                l3 = l3->next;
+            }
+
+            if(l2 != nullptr){
+                l3->val += l1->val + l2->val;
+                if(l3->val >= 10){
+                    l3->val %= 10;
+                    l3->next = new ListNode(1);
+                }
+                l1 = l1->next;
+                l2 = l2->next;
+            }
+            else{
+                l3->val += l1->val;
+                if(l3->val >= 10){
+                    l3->val %= 10;
+                    l3->next = new ListNode(1);
+                }
+                l1 = l1->next;
+            }
+        }
+        while (l2 != nullptr)
+        {
+            if(l3 == nullptr){
+                l3 = l = new ListNode(0);
+            }
+            else{
+                if(l3->next == nullptr){
+                    l3->next = new ListNode(0);
+                }
+                l3 = l3->next;
+            }
+            l3->val += l2->val;
+            if(l3->val >= 10){
+                l3->val %= 10;
+                l3->next = new ListNode(1);
+            }
+            l2 = l2->next;
+        }
+        return l;
+    }
+
+    ListNode* get(ListNode *l, int pos){
+        while(--pos){
+            l = l->next;
+        }
+        return l;
+    }
+    
+    void question2_2_2(ListNode *l1, int m, int n){
+        ListNode *l = l1;
+        for(int i=1; (l!=nullptr)&&(i<=(m+n)/2); l=l->next, i++){
+            if(i >= m){
+                int tmp = l->val;
+                l->val = get(l, n-(i-m)-i+1)->val;
+                get(l, n-(i-m)-i+1)->val = tmp;
+            }
+        }
+    }
+    ListNode* question2_2_2_method2(ListNode *l1, int m, int n){
+        ListNode dummy(-1);
+        dummy.next = l1;
+        ListNode *head = &dummy;
+        for(int i=0; i<m-1; i++){
+            head = head->next;
+        }
+        ListNode *end = head->next;
+        ListNode *cur = end->next;
+        ListNode *tmp;
+        for(int i=m+1; i<=n; i++){
+            tmp = cur->next;
+            cur->next = head->next;
+            head->next = cur;
+            cur = tmp;
+        }
+        end->next = tmp;
+        return dummy.next;
+    }
 };
 
 test_leetCodeShuati::test_leetCodeShuati(/* args */)
@@ -250,8 +392,28 @@ test_leetCodeShuati::test_leetCodeShuati(/* args */)
     // len = question2_1_15_method2(v5);
     // cout << "len is " << len << endl;
 
-    int fn = question2_1_18(5);
-    cout << "fn = "<< fn << endl;
+    // int fn = question2_1_18(5);
+    // cout << "fn = "<< fn << endl;
+    // vector<vector<int>> vv={{1,2,3},{0,5,6},{7,8,9},{10,11,12}};
+    // question2_1_20(vv);
+    // print(vv);
+
+    ListNode* l1;
+    ListNode* l2;
+    l1 = new ListNode(1);
+    l1->next = new ListNode(2);
+    l1->next->next = new ListNode(3);
+    l1->next->next->next = new ListNode(4);
+    l1->next->next->next->next = new ListNode(5);
+    l2 = new ListNode(1);
+    l2->next = new ListNode(2);
+    l2->next->next = new ListNode(3);
+    l2->next->next->next = new ListNode(4);
+    // ListNode *l3 = question2_2_1(l1, l2);
+    // print(l3);
+    //question2_2_2(l1, 1,4);
+    ListNode* l3 = question2_2_2_method2(l1, 3,4);
+    print(l3);
 }
 
 test_leetCodeShuati::~test_leetCodeShuati()

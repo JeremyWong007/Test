@@ -30,6 +30,7 @@
 #include "test_stream.hpp"
 #include "test_vector.hpp"
 #include "test_float.hpp"
+#include "test_regex.hpp"
 
 log4cpp::Category& stlCategory = root.getInstance("stl");
 
@@ -655,10 +656,11 @@ stl_test::stl_test(/* args */)
     // test_stack t_stack;
     // test_list t_list;
     // test_heap t_heap;
-    //test_string t_str;
-    //test_stream t_stream;
-    //test_vector();
-    test_float();
+    // test_string t_str;
+    // test_stream t_stream;
+    // test_vector();
+    // test_float();
+    // test_regex();
 }
 
 stl_test::~stl_test()

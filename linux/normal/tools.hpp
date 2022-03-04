@@ -27,6 +27,29 @@ void print(std::vector<T> l){
     }
     cout << endl;
 }
+template<typename T>
+void print(std::vector<std::vector<T>> l){
+    cout << "print: ";
+    for(auto a : l){
+        for(auto b : a){
+            cout << " " << b;
+        }
+    }
+    cout << endl;
+}
+
+struct ListNode{
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(nullptr){}
+};
+void print(ListNode* l){
+    cout << "print: ";
+    while(l != nullptr){
+        cout << " " << l->val;
+        l = l->next;
+    }
+}
 
 class tools
 {
