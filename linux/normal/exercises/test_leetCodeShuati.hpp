@@ -355,6 +355,79 @@ public:
         end->next = tmp;
         return dummy.next;
     }
+
+    //question 3.6
+    bool isMatch(const char *s, const char *p){
+
+    }
+
+    //question 4.1.1
+    bool isValid(const string& s){
+        string l = "({[";
+        string r = ")}]";
+        stack<char> stk;
+        cout<<"tt:"<<l[string::npos]<<endl;
+        for(auto c : s){
+            if(l.find(c) != string::npos){
+                stk.emplace(c);
+            }
+            else{
+                if(r.find(c) != string::npos){
+                    if(stk.empty()) return false;
+                    if(stk.top() == l[r.find(c)]){
+                        stk.pop(); 
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+        return stk.empty();
+    }
+
+    //question 4.1.2
+    int maxLength(const string& s){
+        string l = "({[";
+        string r = ")}]";
+        stack<char> stk;
+        int maxlen = 0, len = 0;
+        string::size_type maxindex = 0, index = 0;
+        auto fget = [&](){
+            if(len > maxlen){
+                maxlen = len;
+                maxindex = index; 
+            }
+            len = 0;
+        };
+        for(string::const_iterator it=s.begin(); it!=s.end(); it++){
+            if(l.find(*it) != string::npos){
+                stk.emplace(*it);
+            }
+            else{
+                if(r.find(*it) != string::npos){
+                    if(stk.empty()) fget();
+                    if(stk.top() == l[r.find(*it)]){
+                        stk.pop(); 
+                        len++;
+                        index = it-s.begin();
+                    }
+                    else{
+                        fget();
+                    }
+                }
+                else{
+                    fget();
+                }
+            }
+        }
+        fget();
+        cout << "index: " << maxindex << endl;
+        return maxlen*2;
+    }
 };
 
 test_leetCodeShuati::test_leetCodeShuati(/* args */)
@@ -398,22 +471,27 @@ test_leetCodeShuati::test_leetCodeShuati(/* args */)
     // question2_1_20(vv);
     // print(vv);
 
-    ListNode* l1;
-    ListNode* l2;
-    l1 = new ListNode(1);
-    l1->next = new ListNode(2);
-    l1->next->next = new ListNode(3);
-    l1->next->next->next = new ListNode(4);
-    l1->next->next->next->next = new ListNode(5);
-    l2 = new ListNode(1);
-    l2->next = new ListNode(2);
-    l2->next->next = new ListNode(3);
-    l2->next->next->next = new ListNode(4);
-    // ListNode *l3 = question2_2_1(l1, l2);
+    // ListNode* l1;
+    // ListNode* l2;
+    // l1 = new ListNode(1);
+    // l1->next = new ListNode(2);
+    // l1->next->next = new ListNode(3);
+    // l1->next->next->next = new ListNode(4);
+    // l1->next->next->next->next = new ListNode(5);
+    // l2 = new ListNode(1);
+    // l2->next = new ListNode(2);
+    // l2->next->next = new ListNode(3);
+    // l2->next->next->next = new ListNode(4);
+    // // ListNode *l3 = question2_2_1(l1, l2);
+    // // print(l3);
+    // //question2_2_2(l1, 1,4);
+    // ListNode* l3 = question2_2_2_method2(l1, 3,4);
     // print(l3);
-    //question2_2_2(l1, 1,4);
-    ListNode* l3 = question2_2_2_method2(l1, 3,4);
-    print(l3);
+
+    // bool b = isValid("({}{}})[]");
+    // cout << "b is " << b << endl;
+    len = maxLength("({{}{}})[]");
+    cout << "len is " << len << endl;
 }
 
 test_leetCodeShuati::~test_leetCodeShuati()

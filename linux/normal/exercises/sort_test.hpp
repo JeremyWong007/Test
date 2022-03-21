@@ -9,7 +9,8 @@ class sort_test
 {
 private:
     /* data */
-    std::vector<int> inputVector={22,11,55,22,66,99,1,3, 2,8,4,2,6,7,12,8};
+    std::vector<int> inputVector;
+    //std::vector<int> inputVector={22,11,55,22,66,99,1,3, 2,8,4,2,6,7,12,8};
     //std::vector<int> inputVector={1,3,2,8,4,2};
     //std::vector<int> inputVector={1,3,6,8,4,5};
     //std::vector<int> inputVector={1,3,2,8,4,2,9,7};
@@ -144,24 +145,113 @@ public:
     void test2(string str){
         cout<<"test "<<str<<endl;
     }
+
+    void insert_sort2(){
+        vector<int>& v = inputVector;
+        for(size_t i=1; i<v.size(); i++){
+            int tmp = v[i];
+            for(size_t j=i; j>0; j--){
+                if(v[j-1] > tmp) v[j] = v[j-1];
+                else{
+                    v[j] = tmp;
+                    break;;
+                }
+                if(j == 1){
+                    v[0] = tmp;
+                }
+            }
+        }
+    }
+
+    void quickSort(vector<int>& v, int left, int right){
+        int mid;
+        if(left < right){
+            mid = part(v, left, right);
+            quickSort(v, left, mid-1);
+            quickSort(v, mid+1, right);
+        }
+    }
+    int part(vector<int>& v, int left, int right){
+        int base = v[left];
+        int index = left+1;
+        for(int i=left+1; i<=right; i++){
+            if(v[i] < base){
+                swap(v, i, index++);
+            }
+        }
+        swap(v, left, index-1);
+        return index-1;
+    }
+    void swap(vector<int>& v, int index1, int index2){
+        int tmp = v[index1];
+        v[index1] = v[index2];
+        v[index2] = tmp;
+    }
+
+    void createHeap(vector<int>& v, int len){
+        for(int i=len/2-1; i>=0; i--){
+            heapify(v, i, len);
+        }
+    }
+    void swapHead(vector<int>& v, int len){
+        int tmp = v[len-1];
+        v[len-1] = v[0];
+        v[0] = tmp;
+    }
+    void heapify(vector<int>& v, int index, int len){
+        if(len > index*2+1){
+            if(v[index] < v[index*2+1]) swap(v,index,index*2+1);
+            heapify(v, index*2+1, len);
+        }
+        if(len > index*2+2){
+            if(v[index] < v[index*2+2]) swap(v,index,index*2+2);
+            heapify(v, index*2+2, len);
+        }
+    }
+    void heapSort(vector<int>& v){
+        createHeap(v, v.size());
+        for(int len=v.size(); len>1; ){
+            swapHead(v, len);
+            heapify(v,0,--len);
+        }
+    }
+
 };
 
 sort_test::sort_test(/* args */)
 {
     ilog("test sort in");
-    //insert_sort();
+    inputVector={22,11,55,22,66,99,1,3, 2,8,4,2,6,7,12,8};
+    //insert_sort2();
     //auto f = std::bind(&sort_test::insert_sort, this);
     //auto f = std::bind(&sort_test::shell_sort1, this, inputVector, inputVector.size());
     //tools::test_runTime<>(f);
     //shell_sort1(inputVector, inputVector.size());
-    shell_sort2(inputVector, inputVector.size());
+    //shell_sort2(inputVector, inputVector.size());
+    //quickSort(inputVector, 0, inputVector.size()-1);
+    heapSort(inputVector);
     cout<<"sort:";
     for(int i=0; i<(int)inputVector.size(); i++){
         cout<<" "<<inputVector[i];
     }
     cout << endl;
-    int res = erfen_find(inputVector, 5);
-    cout << "erfine find resuldt: " << res << endl;
+    // int res = erfen_find(inputVector, 5);
+    // cout << "erfine find resuldt: " << res << endl;
+
+    std::vector<int> vec(0);
+    for(int i = 0 ; i < 10; i++)
+    {
+        vec.push_back(i);
+        
+    }
+    vec.push_back(7);
+    auto ret = std::remove(vec.begin(), vec.end(), 7);
+    vec.erase(ret, vec.end());
+
+    for(auto &i : vec)
+    {
+        std::cout << i << " " << std::endl;
+    }
 }
 
 sort_test::~sort_test()

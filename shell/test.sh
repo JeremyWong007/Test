@@ -151,6 +151,11 @@ function test_array(){
     for element in ${fruit[@]}; do
         echo $element
     done
+    
+    for((i=0;i<10;i++)); do
+        echo $i
+    done
+    
     echo "array length is ${#fruit[@]}"
     echo "fruit[0]=${fruit[0]}"
     i="1"
