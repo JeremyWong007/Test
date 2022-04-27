@@ -113,15 +113,16 @@ void process_client(shared_ptr<boost::asio::ip::tcp::socket> client){
 }
 typedef function<void (const boost::system::error_code&)> accept_callback;
 void start_accept(boost::asio::ip::tcp::acceptor &acceptor){
-    shared_ptr<boost::asio::ip::tcp::socket> client(new boost::asio::ip::tcp::socket(acceptor.get_executor()));
-    accept_callback callback=[&acceptor,client](const boost::system::error_code &error){
-        if(!error){
-            std::cout<<"callback in"<<std::endl;
-            process_client(client);
-        }
-        start_accept(acceptor);
-    };
-    acceptor.async_accept(*client,callback);
+    //注意：1.66的版本不支持，会报错
+    // shared_ptr<boost::asio::ip::tcp::socket> client(new boost::asio::ip::tcp::socket(acceptor.get_executor()));
+    // accept_callback callback=[&acceptor,client](const boost::system::error_code &error){
+    //     if(!error){
+    //         std::cout<<"callback in"<<std::endl;
+    //         process_client(client);
+    //     }
+    //     start_accept(acceptor);
+    // };
+    // acceptor.async_accept(*client,callback);
 }
 void test_server_async(){
     try{

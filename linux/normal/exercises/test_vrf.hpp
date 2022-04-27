@@ -1,12 +1,17 @@
 /*
 工程构建：
- 编译安装libsodium: https://github.com/algorand/libsodium
- 拷贝遗漏头文件：sudo cp ./libsodium/src/libsodium/include/sodium/crypto_vrf* /usr/local/include/sodium/
-
+ 编译安装libsodium: 
+  git clone https://github.com/algorand/libsodium.git
+  sh autogen.sh
+  ./configure
+  make
+  make install
 */
 
 #include "../common.h"
 #include <sodium.h>
+#include <string.h>
+#include "../tools.hpp"
 
 using namespace std;
 
@@ -74,7 +79,6 @@ test_vrf::test_vrf(/* args */)
     ilog("test vrf in");
     printf("%d\n", sodium_version_string() != NULL);
 
-    #if 0
     unsigned char sk[crypto_vrf_SECRETKEYBYTES];
 	unsigned char pk[crypto_vrf_PUBLICKEYBYTES];
 	unsigned char proof[crypto_vrf_PROOFBYTES];
@@ -166,7 +170,65 @@ test_vrf::test_vrf(/* args */)
 		}
 	}
 	printf("%u tests\n", i);
-    #endif
+	
+	memset(sk, 0, sizeof sk);
+	memset(pk, 0, sizeof pk);
+	memset(proof, 0, sizeof proof);
+	memset(output, 0, sizeof output);
+	crypto_vrf_keypair_from_seed(pk, sk, test_data[0].seed);
+	if (memcmp(pk, test_data[0].pk, crypto_vrf_PUBLICKEYBYTES) != 0){
+		printf("keypair_from_seed produced wrong pk: [%u]\n", 0);
+		printhex("\tWanted: ", test_data[0].pk, crypto_vrf_PUBLICKEYBYTES);
+		printhex("\tGot:    ", pk, crypto_vrf_PUBLICKEYBYTES);
+		return;
+	}
+	if (!crypto_vrf_is_valid_key(pk)) {
+		printf("crypto_vrf_is_valid_key() error: [%u]\n", 0);
+		return;
+	}	
+	auto f = [&](){
+		for (i = 0U; i < 1000; i++) {
+			if (crypto_vrf_prove(proof, sk, (const unsigned char*) test_data[0].msg, 0) != 0){
+				printf("crypto_vrf_prove() error: [%u]\n", 0);
+				continue;
+			}
+			// if (memcmp(test_data[0].proof, proof, crypto_vrf_PROOFBYTES) != 0){
+			// 	printf("proof error: [%u]\n", 0);
+			// 	printhex("\tWanted: ", test_data[0].proof, crypto_vrf_PROOFBYTES);
+			// 	printhex("\tGot:    ", proof, crypto_vrf_PROOFBYTES);
+			// 	continue;
+			// }
+			if (crypto_vrf_verify(output, test_data[0].pk, proof, (const unsigned char*) test_data[0].msg, 0) != 0){
+				printf("verify error: [%u]\n", 0);
+				continue;
+			}
+			// if (memcmp(output, test_data[0].output, crypto_vrf_OUTPUTBYTES) != 0){
+			// 	printf("output wrong: [%u]\n", 0);
+			// 	printhex("\tWanted: ", test_data[0].output, crypto_vrf_OUTPUTBYTES);
+			// 	printhex("\tGot:    ", output, crypto_vrf_OUTPUTBYTES);
+			// 	continue;
+			// }
+		}
+	};
+	auto f1 = [&](){
+		for (i = 0U; i < 1000; i++) {
+			if (crypto_vrf_prove(proof, sk, (const unsigned char*) test_data[0].msg, 0) != 0){
+				printf("crypto_vrf_prove() error: [%u]\n", 0);
+				continue;
+			}
+		}
+	};
+	auto f2 = [&](){
+		for (i = 0U; i < 1000; i++) {
+			if (crypto_vrf_verify(output, test_data[0].pk, proof, (const unsigned char*) test_data[0].msg, 0) != 0){
+				printf("verify error: [%u]\n", 0);
+				continue;
+			}
+		}
+	};
+	tools::test_runTime(f);
+	tools::test_runTime(f1);
+	tools::test_runTime(f2);
 }
 
 test_vrf::~test_vrf()

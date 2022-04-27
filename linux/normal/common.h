@@ -4,7 +4,7 @@ log4cpp使用说明：
 2 在需要使用的日志文件中包含头文件，并获取引用，例：log4cpp::Category& boostCategory = root.getInstance("boost");
 3 通过“mainCategory.debug/info/warn/error/fatal”输出日志
 安装说明：
-1 https://github.com/orocos-toolchain/log4cpp
+1 git clone https://github.com/orocos-toolchain/log4cpp.git
 2 mkdir build; cd build/; cmake ..; make -j8; sudo make install
 */
 #pragma once

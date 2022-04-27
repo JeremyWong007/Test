@@ -45,7 +45,7 @@ ADD_SUBDIRECTORY(exercises)
 
 set(Boost_INCLUDE_DIR /usr/local/include)
 set(Boost_LIBRARY_DIR /usr/local/lib)
-find_package(Boost COMPONENTS system filesystem thread date_time REQUIRED)
+find_package(Boost 1.66.0 REQUIRED COMPONENTS system filesystem thread date_time)
 
 #头文件搜索目录
 include_directories(${Boost_INCLUDE_DIR})
