@@ -103,6 +103,8 @@ test_vrf::test_vrf(/* args */)
 			printhex("\tGot:    ", pk, crypto_vrf_PUBLICKEYBYTES);
 			continue;
 		}
+		printhex("\tGot pk:    ", pk, crypto_vrf_PUBLICKEYBYTES);
+		printhex("\tGot sk:    ", sk, crypto_vrf_SECRETKEYBYTES);
 		if (!crypto_vrf_is_valid_key(pk)) {
 			printf("crypto_vrf_is_valid_key() error: [%u]\n", i);
 			continue;

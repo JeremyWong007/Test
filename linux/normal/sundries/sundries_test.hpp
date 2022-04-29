@@ -3,6 +3,10 @@
 #include <map>
 #include "../common.h"
 #include "test_dump.hpp"
+#include "test_vrf_ECDSA.hpp"
+#ifdef LIBSODIUM
+     #include "test_vrf.hpp"
+#endif
 
 log4cpp::Category& sundryCategory = root.getInstance("sundry");
 
@@ -62,6 +66,10 @@ sundries_test::sundries_test(/* args */)
     // say(1,2,3);
     // test_fucptr();
     // test_show();
+    #ifdef LIBSODIUM
+        test_vrf t_vrf;
+    #endif
+    test_vrf_ECDSA t_vrf_ecdsa;
 }
 
 sundries_test::~sundries_test()

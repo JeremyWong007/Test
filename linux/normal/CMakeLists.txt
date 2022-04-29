@@ -62,6 +62,9 @@ if(LibSodium)
   link_libraries("/usr/local/lib/libsodium.so")
   add_definitions(-DLIBSODIUM)
 endif(LibSodium)
+
+link_libraries("/usr/local/lib/libsecp256k1-vrf.so")
+
 #设置链接库
 SET(EXTRA_LIBS ${EXTRA_LIBS} ${MY_LINK})
 

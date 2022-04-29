@@ -5,9 +5,6 @@
 #include <functional>
 #include "../tools.hpp"
 #include "test_binary_tree.hpp"
-#ifdef LIBSODIUM
-     #include "test_vrf.hpp"
-#endif
 #include "shuati.hpp"
 #include "test_leetCodeShuati.hpp"
 
@@ -188,9 +185,6 @@ exercises::exercises(/* args */)
     #endif
     // sort_test testsort;
     // test_binary_tree t_binary_tree;
-    #ifdef LIBSODIUM
-        //test_vrf t_vrf;
-    #endif
     //shuati t_shuati;
     test_leetCodeShuati t_leetCodeShuati;
 }
