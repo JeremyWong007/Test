@@ -31,6 +31,7 @@
 #include "test_vector.hpp"
 #include "test_float.hpp"
 #include "test_regex.hpp"
+#include "test_thread.hpp"
 
 log4cpp::Category& stlCategory = root.getInstance("stl");
 
@@ -661,6 +662,7 @@ stl_test::stl_test(/* args */)
     // test_vector();
     // test_float();
     // test_regex();
+    test_thread t_thread;
 }
 
 stl_test::~stl_test()

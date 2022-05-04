@@ -12,6 +12,8 @@
 #include <sodium.h>
 #include <string.h>
 #include "../tools.hpp"
+#include <thread>
+#include <vector>
 
 using namespace std;
 
@@ -71,8 +73,123 @@ private:
     /* data */
 public:
     test_vrf(/* args */);
+	void test_vrf_parallel();
     ~test_vrf();
 };
+
+void test_vrf::test_vrf_parallel(/* args */)
+{
+	timeval time_start,time_end;
+    gettimeofday(&time_start, nullptr);
+	std::vector<std::shared_ptr<std::thread>> vst; 
+	vst.resize(sizeof(test_data));
+	
+	auto f2 = [](int i){
+		cout<<"test f2 start."<<" i: "<<i<<endl;
+		unsigned char sk[crypto_vrf_SECRETKEYBYTES];
+		unsigned char pk[crypto_vrf_PUBLICKEYBYTES];
+		unsigned char proof[crypto_vrf_PROOFBYTES];
+		unsigned char output[crypto_vrf_OUTPUTBYTES];
+
+		assert(crypto_vrf_SECRETKEYBYTES == 64);
+		assert(crypto_vrf_PUBLICKEYBYTES == 32);
+		assert(crypto_vrf_SEEDBYTES == 32);
+		assert(crypto_vrf_PROOFBYTES == 80);
+		assert(crypto_vrf_OUTPUTBYTES == 64);
+
+		memset(sk, 0, sizeof sk);
+		memset(pk, 0, sizeof pk);
+		memset(proof, 0, sizeof proof);
+		memset(output, 0, sizeof output);
+		crypto_vrf_keypair_from_seed(pk, sk, test_data[i].seed);
+		if (memcmp(pk, test_data[i].pk, crypto_vrf_PUBLICKEYBYTES) != 0){
+			printf("keypair_from_seed produced wrong pk: [%u]\n", i);
+			printhex("\tWanted: ", test_data[i].pk, crypto_vrf_PUBLICKEYBYTES);
+			printhex("\tGot:    ", pk, crypto_vrf_PUBLICKEYBYTES);
+			return;
+		}
+		printhex("\tGot pk:    ", pk, crypto_vrf_PUBLICKEYBYTES);
+		printhex("\tGot sk:    ", sk, crypto_vrf_SECRETKEYBYTES);
+		if (!crypto_vrf_is_valid_key(pk)) {
+			printf("crypto_vrf_is_valid_key() error: [%u]\n", i);
+			return;
+		}
+		if (crypto_vrf_prove(proof, sk, (const unsigned char*) test_data[i].msg, i) != 0){
+			printf("crypto_vrf_prove() error: [%u]\n", i);
+			return;
+		}
+		if (memcmp(test_data[i].proof, proof, crypto_vrf_PROOFBYTES) != 0){
+			printf("proof error: [%u]\n", i);
+			printhex("\tWanted: ", test_data[i].proof, crypto_vrf_PROOFBYTES);
+			printhex("\tGot:    ", proof, crypto_vrf_PROOFBYTES);
+			return;
+		}
+		if (crypto_vrf_verify(output, test_data[i].pk, proof, (const unsigned char*) test_data[i].msg, i) != 0){
+			printf("verify error: [%u]\n", i);
+			return;
+		}
+		if (memcmp(output, test_data[i].output, crypto_vrf_OUTPUTBYTES) != 0){
+			printf("output wrong: [%u]\n", i);
+			printhex("\tWanted: ", test_data[i].output, crypto_vrf_OUTPUTBYTES);
+			printhex("\tGot:    ", output, crypto_vrf_OUTPUTBYTES);
+			return;
+		}
+
+		proof[0] ^= 0x01;
+		if (crypto_vrf_verify(output, test_data[i].pk, proof, (const unsigned char*) test_data[i].msg, i) == 0){
+			printf("verify succeeded with bad gamma: [%u]\n", i);
+			return;
+		}
+		proof[0] ^= 0x01;
+		proof[32] ^= 0x01;
+		if (crypto_vrf_verify(output, test_data[i].pk, proof, (const unsigned char*) test_data[i].msg, i) == 0){
+			printf("verify succeeded with bad c value: [%u]\n", i);
+			return;
+		}
+		proof[32] ^= 0x01;
+		proof[48] ^= 0x01;
+		if (crypto_vrf_verify(output, test_data[i].pk, proof, (const unsigned char*) test_data[i].msg, i) == 0){
+			printf("verify succeeded with bad s value: [%u]\n", i);
+			return;
+		}
+		proof[48] ^= 0x01;
+		proof[79] ^= 0x80;
+		if (crypto_vrf_verify(output, test_data[i].pk, proof, (const unsigned char*) test_data[i].msg, i) == 0){
+			printf("verify succeeded with bad s value (high-order-bit flipped): [%u]\n", i);
+			return;
+		}
+		proof[79] ^= 0x80;
+
+		if (i > 0) {
+			if (crypto_vrf_verify(output, test_data[i].pk, proof, (const unsigned char*) test_data[i].msg, i-1) == 0){
+				printf("verify succeeded with truncated message: [%u]\n", i);
+				return;
+			}
+		}
+
+		if (crypto_vrf_proof_to_hash(output, proof) != 0){
+			printf("crypto_vrf_proof_to_hash() error: [%u]\n", i);
+			return;
+		}
+		if (memcmp(output, test_data[i].output, crypto_vrf_OUTPUTBYTES) != 0){
+			printf("output wrong: [%u]\n", i);
+			return;
+		}
+		
+		cout<<"test f2 end."<<" i: "<<i<<endl;
+	};
+	
+	for (uint i = 0U; i < (sizeof test_data) / (sizeof test_data[0]); i++) {
+		vst[i]=std::make_shared<std::thread>(f2, i);
+		
+	}	
+	for (uint i = 0U; i < (sizeof test_data) / (sizeof test_data[0]); i++) {
+		vst[i]->join();
+	}
+	gettimeofday(&time_end, nullptr);
+	cout<<"test_vrf_parallel time: "<< (time_end.tv_sec - time_start.tv_sec) * 1000000 + time_end.tv_usec - time_start.tv_usec \
+        <<" us"<<endl;
+}
 
 test_vrf::test_vrf(/* args */)
 {
@@ -91,6 +208,8 @@ test_vrf::test_vrf(/* args */)
 	assert(crypto_vrf_PROOFBYTES == 80);
 	assert(crypto_vrf_OUTPUTBYTES == 64);
 
+	timeval time_start,time_end;
+    gettimeofday(&time_start, nullptr);
 	for (i = 0U; i < (sizeof test_data) / (sizeof test_data[0]); i++) {
 		memset(sk, 0, sizeof sk);
 		memset(pk, 0, sizeof pk);
@@ -172,7 +291,10 @@ test_vrf::test_vrf(/* args */)
 		}
 	}
 	printf("%u tests\n", i);
-	
+	gettimeofday(&time_end, nullptr);
+	cout<<"Test vrf time: "<< (time_end.tv_sec - time_start.tv_sec) * 1000000 + time_end.tv_usec - time_start.tv_usec \
+        <<" us"<<endl;
+	test_vrf_parallel();
 	memset(sk, 0, sizeof sk);
 	memset(pk, 0, sizeof pk);
 	memset(proof, 0, sizeof proof);
