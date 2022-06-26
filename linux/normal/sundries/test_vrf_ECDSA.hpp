@@ -1,17 +1,34 @@
 /*
-编译安装lsecp256k1-vrf: 
+编译安装secp256k1-vrf: 
   git clone https://github.com/aergoio/secp256k1-vrf
     $ ./autogen.sh
-    $ ./configure
+    $ ./configure --enable-module-recovery --enable-module-ecdh --enable-coverage --enable-experimental
     $ make
     $ make check
     $ sudo make install  # optional
 */
 
 #include <secp256k1-vrf.h>
+#include <secp256k1_recovery.h>
 #include "../common.h"
 #include <string.h>
 
+
+// added by michael at 1/10
+void recover()
+{
+    secp256k1_ecdsa_recoverable_signature rawSig;
+    secp256k1_context *ctx;
+    const unsigned char input64[20]={0};
+    if (!secp256k1_ecdsa_recoverable_signature_parse_compact(ctx, &rawSig, input64, 10))
+        return;
+
+    secp256k1_pubkey rawPubkey;
+    const unsigned char msg32[20]={0};
+    if (!secp256k1_ecdsa_recover(ctx, &rawPubkey, &rawSig, msg32))
+        return;
+    return;
+}
 
 class test_vrf_ECDSA
 {
