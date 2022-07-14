@@ -18,6 +18,7 @@ test_map::test_map(/* args */)
     if(vrf_proofs.count(10) == 0){
         vrf_proofs[10] = std::vector<uint8_t>();
     }
+    std::vector<uint8_t> a = vrf_proofs.end()->second;
 }
 
 test_map::~test_map()
