@@ -47,7 +47,7 @@ function pkillAndWait(){
 }
 
 function getApplicationName(){
-    if [ "$#" == "0" ]; then
+    if [[ "$#" == "0" || "$1" == "1" ]]; then
     {
         APPLICATION_NAME="/root/ccn/git/mcp/build/mcp"
     }
