@@ -47,19 +47,35 @@ function pkillAndWait(){
 }
 
 function getApplicationName(){
-    if [[ "$#" == "0" || "$1" == "1" ]]; then
+    if [ "$#" == "0" ]; then
     {
-        APPLICATION_NAME="/root/ccn/git/mcp/build/mcp"
+        APPLICATION_NAME="mcp"
+        APPLICATION_PATH_NAME="/root/ccn/git/mcp/build/mcp"
+        APPLICATION_PATH="/root/ccn/git/mcp/build/"
+        
+        echo "APPLICATION_PATH_NAME="$APPLICATION_PATH_NAME
+        echo "APPLICATION_NAME="$APPLICATION_NAME
+        return
     }
-    elif [ "$1" == "2" ]; then
+    fi
+
+    APPLICATION_NAME="$1"
+
+    if [ "$1" == "mcp" ]; then
     {
-        APPLICATION_NAME="/root/ccn/git/mcp2/build/mcp"
+        APPLICATION_PATH_NAME="/root/ccn/git/mcp/build/mcp"
+    }
+    elif [ "$1" == "test1" ]; then
+    {
+        APPLICATION_PATH_NAME="/root/ccn/file/test1"
     }
     else
     {
-        APPLICATION_NAME="/root/ccn/git/mcp/build/mcp"
+        APPLICATION_PATH_NAME="$1"
+        APPLICATION_NAME=${APPLICATION_PATH_NAME##*/}
     }
     fi
+    echo "APPLICATION_PATH_NAME="$APPLICATION_PATH_NAME
     echo "APPLICATION_NAME="$APPLICATION_NAME
 }
 
