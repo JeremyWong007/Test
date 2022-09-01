@@ -27,7 +27,7 @@ fi
 
 function startPart1(){
     nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}1 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}65 --port=${P2P_PORT}06 --witness --witness_account=/root/ccn/config-file/config-file-new/0xf0821dc4ba9419b865aa412170377ca3b44cdb58.json --password=12345678 >> /dev/null 2>&1 &
-#    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}2 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}66 --port=${P2P_PORT}07 --witness --witness_account=/root/ccn/config-file/config-file-new/0x05174fa7ab39a36391b17850a2db9afdcf57190e.json --password=12345678 >> /dev/null 2>&1 &
+    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}2 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}66 --port=${P2P_PORT}07 --witness --witness_account=/root/ccn/config-file/config-file-new/0x05174fa7ab39a36391b17850a2db9afdcf57190e.json --password=12345678 >> /dev/null 2>&1 &
     nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}3 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}67 --port=${P2P_PORT}08 --witness --witness_account=/root/ccn/config-file/config-file-new/0x1895ac1edc15389b905bb19537eb0c5b33d8c77a.json --password=12345678 >> /dev/null 2>&1 &
     nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}4 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}68 --port=${P2P_PORT}09 --witness --witness_account=/root/ccn/config-file/config-file-new/0x329e6b5b8e59fc73d892958b2ff6a89474e3d067.json --password=12345678 >> /dev/null 2>&1 &
     nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}5 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}69 --port=${P2P_PORT}10 --witness --witness_account=/root/ccn/config-file/config-file-new/0x49a1b41e8ccb704f5c069ef89b08cd33f764e9b3.json --password=12345678 >> /dev/null 2>&1 &
@@ -52,14 +52,14 @@ function startPart2(){
 }
 
 function startPart3(){
-    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}21 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}85 --port=${P2P_PORT}26 --witness --witness_account=/root/ccn/config-file/config-file-new/0x4deb824c0e6035f97654aa231a8bf2b6e988b7e5.json --password=12345678 >> /dev/null 2>&1 &
-    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}22 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}86 --port=${P2P_PORT}27 --witness --witness_account=/root/ccn/config-file/config-file-new/0x9ac7ea2b68c7ebd821d0e6f1f73c8678ade7ea4d.json --password=12345678 >> /dev/null 2>&1 &
-    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}23 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}87 --port=${P2P_PORT}28 --witness --witness_account=/root/ccn/config-file/config-file-new/0x15986059d08c85c7c8b66ec9bba06518e1982e25.json --password=12345678 >> /dev/null 2>&1 &
-    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}24 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}88 --port=${P2P_PORT}29 --witness --witness_account=/root/ccn/config-file/config-file-new/0xae0bf9072b885722f3c2eae8edebed3b461ea19a.json --password=12345678 >> /dev/null 2>&1 &
-    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}25 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}89 --port=${P2P_PORT}30 --witness --witness_account=/root/ccn/config-file/config-file-new/0xb3d132b42dc41de85aa13bcf3047cd04e85c435a.json --password=12345678 >> /dev/null 2>&1 &
-    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}26 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}90 --port=${P2P_PORT}31 --witness --witness_account=/root/ccn/config-file/config-file-new/0xbb1f86e871852225163c3c0c15fcbe4357c2667e.json --password=12345678 >> /dev/null 2>&1 &
-    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}27 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}91 --port=${P2P_PORT}32 --witness --witness_account=/root/ccn/config-file/config-file-new/0xdb61485d67b173efdcdcdb3e68be5b8c68e7adde.json --password=12345678 >> /dev/null 2>&1 &
-    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}28 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}92 --port=${P2P_PORT}33 --witness --witness_account=/root/ccn/config-file/config-file-new/0xde4dd6efe9bd7ba5ad3525098946cc19571eba1c.json --password=12345678 >> /dev/null 2>&1 &
+    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}21 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}85 --port=${P2P_PORT}26 --witness --witness_account=/root/ccn/config-file/config-file-new/part3/0x0c19b28490879dc76a6c1584017371f0ff2534bb.json --password=12345678 >> /dev/null 2>&1 &
+    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}22 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}86 --port=${P2P_PORT}27 --witness --witness_account=/root/ccn/config-file/config-file-new/part3/0x4cbe2bec9bc8c0edf3d681fb74681ebcf6d1f5eb.json --password=12345678 >> /dev/null 2>&1 &
+    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}23 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}87 --port=${P2P_PORT}28 --witness --witness_account=/root/ccn/config-file/config-file-new/part3/0x6b15660ae66f6864be4ab5de49abb22cba3f6270.json --password=12345678 >> /dev/null 2>&1 &
+    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}24 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}88 --port=${P2P_PORT}29 --witness --witness_account=/root/ccn/config-file/config-file-new/part3/0x70659723d63f7ce6586e3dcb012e0ea21b77f1b4.json --password=12345678 >> /dev/null 2>&1 &
+    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}25 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}89 --port=${P2P_PORT}30 --witness --witness_account=/root/ccn/config-file/config-file-new/part3/0x7f24f7a7caf8c6ec269debff91a133defd305342.json --password=12345678 >> /dev/null 2>&1 &
+    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}26 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}90 --port=${P2P_PORT}31 --witness --witness_account=/root/ccn/config-file/config-file-new/part3/0x863f64007c3591695b7abf8ff5fad1d0dcda2b81.json --password=12345678 >> /dev/null 2>&1 &
+    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}27 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}91 --port=${P2P_PORT}32 --witness --witness_account=/root/ccn/config-file/config-file-new/part3/0xa4048b64056ed70efd6ea72c62819ea3d88c2b24.json --password=12345678 >> /dev/null 2>&1 &
+    nohup ${APPLICATION_PATH_NAME} --daemon --rpc --rpc_control --network=3 --data_path=${DATA_PATH}28 --rpc_addr=0.0.0.0 --rpc_port=${RPC_PORT}92 --port=${P2P_PORT}33 --witness --witness_account=/root/ccn/config-file/config-file-new/part3/0xadbe5bcf5a09bce4091d130e9b08d59726a6f7cd.json --password=12345678 >> /dev/null 2>&1 &
 }
 
 if [ "$#" -le "1" ]; then
@@ -67,7 +67,7 @@ if [ "$#" -le "1" ]; then
     echo "run all"
     startPart1
     startPart2
-    #startPart3
+    startPart3
 }
 elif [ "$2" == "part1" ]; then
 {

@@ -1,4 +1,8 @@
 /*
+简单使用说明：
+. tools/shelltool/enable_coredump
+首先执行以上命令，然后在同一个终端中执行程序触发coredump
+
 使用说明：
 执行以下三条命令，然后启动应用。重启后需要重新设置命令。
 echo "1" > /proc/sys/kernel/core_uses_pid
@@ -71,7 +75,7 @@ test_dump::test_dump(/* args */)
     //    std::cout<<__FILE__<<":"<<std::dec<<__LINE__<<"  "<<__func__<<std::endl;
     //stackLimit();
     //dividZero();
-    //writeToAddrZero();
+    writeToAddrZero();
     //core_test1();
 }
 
