@@ -67,9 +67,9 @@ sundries_test::sundries_test(/* args */)
     // test_fucptr();
     // test_show();
     #ifdef LIBSODIUM
-        test_vrf t_vrf;
+        // test_vrf t_vrf;
     #endif
-    test_vrf_ECDSA t_vrf_ecdsa;
+    // test_vrf_ECDSA t_vrf_ecdsa;
 }
 
 sundries_test::~sundries_test()

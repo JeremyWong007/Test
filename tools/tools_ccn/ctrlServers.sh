@@ -12,6 +12,9 @@ function copyFileToVRFTestServer(){
     scp -P 1322 -r /root/ccn/localnet/mini4/1/nodekey root@18.163.123.3:/root/ccn/localnet/mini4/1/
     scp -P 1322 -r /root/ccn/localnet/testmode/* root@18.163.123.3:/root/ccn/localnet/testmode/
     scp -P 1322 -r root@18.163.123.3:/root/ccn/localnet/testmode/2/nodekey /root/ccn/localnet/testmode/2/
+    sshpass -p 'jkdsair345f_mcpR' scp -o StrictHostKeyChecking=no -o ConnectTimeout=10 -P 22 -r root@13.212.113.18:/usr/local/ccn-mcp/mcp-programnode/chaindb.tar.gz /tmp
+    scp -P 22 -r root@13.212.113.18:/usr/local/ccn-mcp/mcp-programnode/chaindb.tar.gz /tmp
+    nohup /root/ccn/git/mcp/build/mcp --daemon --rpc --rpc_control --network=2 --data_path=/root/ccn/test/huygens --rpc_addr=0.0.0.0 --rpc_port=8765 >> /dev/null 2>&1 &
 }
 
 function usage() {
@@ -21,6 +24,7 @@ function usage() {
     echo "Exapmple:"
     echo " ./ctrlServers.sh --copymcp"
     echo " ./ctrlServers.sh --copytest1"
+    echo " ./ctrlServers.sh --copy2server"
     exit 1
 }
 
@@ -33,7 +37,19 @@ function copytest1() {
     scp -P 1322 -r /root/ccn/file/test1 root@18.163.123.3:/root/ccn/file/test1
 }
 
-ARGS=`getopt -o h --long copymcp,copytest1 -n 'ctrlServers.sh' -- "$@"`
+function copy2server() {
+    echo "from:$3"
+    echo "to:$4"
+    scp -P 1322 -r $3 root@18.163.123.3:$4
+}
+
+function copy2local() {
+    echo "from:$3"
+    echo "to:$4"
+    scp -P 1322 -r root@18.163.123.3:$4 $3
+}
+
+ARGS=`getopt -o h --long copymcp,copytest1,copy2server,copy2local -n 'ctrlServers.sh' -- "$@"`
 if [ $? != 0 ]; then
     echo "Terminating..."
     exit 1
@@ -52,6 +68,16 @@ do
         --copytest1)
             echo "copy test1 in"
             copytest1
+            shift
+            ;;
+        --copy2server)
+            echo "copy to server in"
+            copy2server $@
+            shift
+            ;;
+        --copy2local)
+            echo "copy to local in"
+            copy2local $@
             shift
             ;;
         --)
