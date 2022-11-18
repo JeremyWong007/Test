@@ -15,6 +15,7 @@ function copyFileToVRFTestServer(){
     sshpass -p 'jkdsair345f_mcpR' scp -o StrictHostKeyChecking=no -o ConnectTimeout=10 -P 22 -r root@13.212.113.18:/usr/local/ccn-mcp/mcp-programnode/chaindb.tar.gz /tmp
     scp -P 22 -r root@13.212.113.18:/usr/local/ccn-mcp/mcp-programnode/chaindb.tar.gz /tmp
     nohup /root/ccn/git/mcp/build/mcp --daemon --rpc --rpc_control --network=2 --data_path=/root/ccn/test/huygens --rpc_addr=0.0.0.0 --rpc_port=8765 >> /dev/null 2>&1 &
+    nohup /root/ccn/git/mcp/build/mcp --daemon --rpc --rpc_control --network=3 --data_path=/mnt/e/co_CCN/test/witness1/witness --rpc_addr=0.0.0.0 --rpc_port=8765 --witness --witness_account=/mnt/e/co_CCN/test/witness1/0x05174fa7ab39a36391b17850a2db9afdcf57190e.json --password=12345678 >> /dev/null 2>&1 &
 }
 
 function usage() {
