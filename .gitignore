@@ -3,3 +3,7 @@ linux/normal/build/
 linux/normal/build_dbg/
 linux/normal/lib/
 linux/single/build/
+go/bin/
+go/java/
+go/pkg
+

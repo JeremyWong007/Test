@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"fff"
+)
 
 func main() {
 	var numbers []int
@@ -9,6 +13,10 @@ func main() {
 	/* 允许追加空切片 */
 	numbers = append(numbers, 0)
 	printSlice(numbers)
+	Show()
+	printSlice(numbers)
+	fff.Showf()
+	fff.Showf()
 }
 
 func printSlice(x []int) {
