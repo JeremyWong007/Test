@@ -91,4 +91,10 @@ contract Test {
 
         require(a <= 0xFFFF, "[test:]a>0xFFFF");
     }
+
+    function f2(uint256 a1, uint256 a2, uint256 a3, uint256 a4, uint256 a5, uint256 a6) public {
+        uint256 c;
+        c = a1*a2*a3*a3*a3*a4*a4*a5*a6;
+        require(c >= 0xFFFF, "[test:]a>0xFFFF");
+    }
 }
