@@ -81,7 +81,7 @@ contract Test {
         emit log(str);
     }
 
-    function CalculateRewards(address den) public returns(uint[1] memory amount){
+    function CalculateRewards(address den) public returns(uint[2] memory amount){
         uint[2] memory input;
         addr = den;
         input[0] = uint256(uint160(den));
