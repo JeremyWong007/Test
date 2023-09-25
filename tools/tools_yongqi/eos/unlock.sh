@@ -1,4 +1,4 @@
 #!/bin/bash
 
-key=$(cat /data/info/wallet_eos.key)
-cleos --url wallet unlock --password $key
+key=$(cat wallet_eos.key)
+cleos wallet unlock --password $key

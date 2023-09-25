@@ -1,4 +1,4 @@
 #!/bin/bash
-pkill tafcored
+pkill nodeos
 rm -fr blockchain
 ls -al
