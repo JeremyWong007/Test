@@ -1,0 +1,13 @@
+常用命令：
+truffle compile
+truffle console --network mcp
+truffle exec .\js\get.js --network mcp
+truffle exec .\js\set.js --network mcp
+truffle migrate --network mcp
+
+
+truffle exec .\js\setParam.js --network mcp
+truffle exec .\js\addMiner.js --network mcp
+truffle exec .\js\deleteMiner.js --network mcp
+truffle exec .\js\stake.js --network mcp
+truffle exec .\js\unstake.js --network mcp

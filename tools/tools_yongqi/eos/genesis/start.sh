@@ -38,7 +38,7 @@ ${config_general} \
 --p2p-max-nodes-per-host 100 \
 --chain-state-db-size-mb=102400 \
 ${config_personality} \
---http-server-address 0.0.0.0:8889 \
+--http-server-address 0.0.0.0:8888 \
 --p2p-listen-endpoint 0.0.0.0:7010 \
 --p2p-peer-address localhost:7011 \
 --p2p-peer-address localhost:7012 \

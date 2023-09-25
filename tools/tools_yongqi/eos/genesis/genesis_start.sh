@@ -39,10 +39,11 @@ ${config_general} \
 --keosd-provider-timeout 5000 \
 --p2p-max-nodes-per-host 100 \
 --chain-state-db-size-mb=102400 \
+--logconf /home/d/projects/Test/tools/tools_yongqi/logging.json \
 ${config_genesis_start} \
 --genesis-json $DATADIR"/../../genesis.json" \
 ${config_personality} \
---http-server-address 0.0.0.0:8889 \
+--http-server-address 0.0.0.0:8888 \
 --p2p-listen-endpoint 0.0.0.0:7010 \
 --p2p-peer-address localhost:7010 \
 --p2p-peer-address localhost:7011 \
