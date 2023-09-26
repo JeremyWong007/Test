@@ -7,3 +7,4 @@ go/bin/
 go/java/
 go/pkg
 
+*.key
