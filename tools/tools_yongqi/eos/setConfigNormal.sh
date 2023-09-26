@@ -10,9 +10,9 @@ set -x
 # echo CONTRACT_PATH is ${CONTRACT_PATH}
 
 #CONTRACT_PATH=/home/d/projects/eosio.contracts/build/contracts
-CONTRACT_PATH=/root/ccn/git/eosio.contracts/build/contracts
+CONTRACT_PATH=/root/projects/threed/bpc-atlantis-contracts/build/contracts
 #CONTRACT_BOOT_PATH=/home/d/projects/eos/contracts/contracts
-CONTRACT_BOOT_PATH=/root/ccn/git/eos/contracts/contracts
+CONTRACT_BOOT_PATH=/root/projects/threed/contracts
 
 # EOS6Kc7LVUHVxauut2rj8Rwk21mXAYpvLoNsJf3C1vFLFjhGeeHHM=KEY:5JLrjLzKiWvecrUkBBPEBm4Wt8F7ECygLNnLhhLW64fCGP5RUvH
 cleos create account eosio eosio.bpay EOS6Kc7LVUHVxauut2rj8Rwk21mXAYpvLoNsJf3C1vFLFjhGeeHHM

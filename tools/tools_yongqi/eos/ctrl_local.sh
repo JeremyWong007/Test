@@ -27,6 +27,10 @@ cd ../accountnum12
 cd ../accountnum13
 ./${ctrlfile}
 
+sleep 1
+
 echo ""
 echo "ps -e | grep nod"
 ps -e | grep nod
+
+sleep 1
