@@ -1,0 +1,60 @@
+#! /bin/bash
+set -x
+
+#基金会帐户 account address: T17Y2vaQtyQmGVm3MZrvS3hGFj5zVXvo48S
+cleos wallet importkey --private-key 5KENnPegq7hiPBZYRuuD8x4QonnqErFWz4gMiSGCNEcRvvb4KJE
+cleos new account EOS8VS2tKPTznw8BntttKxGzCR6rupgQYeh8LmKj7dXNAsMZYj8NJ
+cleos transfer T1HHsxQ3igveVAfbXipkWH89J6VFS5QGF6T T17Y2vaQtyQmGVm3MZrvS3hGFj5zVXvo48S "240000000.0000 EOS"
+AccountFoundation="T17Y2vaQtyQmGVm3MZrvS3hGFj5zVXvo48S"
+
+#团队帐户 account address: T1BvMyqRo9BnHKi1DamjF1MwWcGT3EGfrCA
+cleos wallet importkey --private-key 5JGdHMeVJc2SpvnY8UPLu4TyxUE3AXQFoxM2pC44hVzvyHKiBYZ
+cleos new account EOS8Gv9KB3M5QmNu69j7BsGXyYQGFAiQWxK9RRmGrCTLuSUQzRE3o
+cleos transfer T1HHsxQ3igveVAfbXipkWH89J6VFS5QGF6T T1BvMyqRo9BnHKi1DamjF1MwWcGT3EGfrCA "180000000.0000 EOS"
+
+#投资者帐户 account address: T1FwoGPJdMdCaBxiXXJYuQHQs1MnRzT9vTA
+cleos wallet importkey --private-key 5KLuHULoc5W29ULdtaDUmgG9k29QngNdwKmrqFbQWV2SsKPxtV2
+cleos new account EOS5h8yr8Fuz5XLVcVZL3kYQYaR8bqBJhXK4vFRVG3ThiKDt67Rsw
+cleos transfer T1HHsxQ3igveVAfbXipkWH89J6VFS5QGF6T T1FwoGPJdMdCaBxiXXJYuQHQs1MnRzT9vTA "780000000.0000 EOS"
+AccountInvestor="T1FwoGPJdMdCaBxiXXJYuQHQs1MnRzT9vTA"
+
+#给tafbas抵压cpu和net，保证创建帐户命令得到正确执行
+cleos producer delegatesource T1FwoGPJdMdCaBxiXXJYuQHQs1MnRzT9vTA T17pFoCekTq9Ukui6jgFhu2QLc9F5tMvJif "500 EOS" "500 EOS"
+
+#Private key: 5JuKyGxvMmQF9HuZjsuRcCChow81MQwWQrfwsdv4MmqBXKFg4gZ
+#Public key: EOS7busyMdrh7xdxCZezMsatdFu5J6zG9eQ1eD97h7AmNZphnKWcU
+cleos wallet importkey --private-key 5JuKyGxvMmQF9HuZjsuRcCChow81MQwWQrfwsdv4MmqBXKFg4gZ
+
+#Private key: 5JzTRMQ82igs7fT5zDuJWXagTpS3RRdEas53PRTDNUm7CHFoJPa
+#Public key: EOS5fgrWNJ1PyMqbkWvdjrn4Mww5NrZ2pYqC1gzMGZcevHgm6PEKr
+cleos wallet importkey --private-key 5JzTRMQ82igs7fT5zDuJWXagTpS3RRdEas53PRTDNUm7CHFoJPa
+
+#Private key: 5JjHW9MBNS5x7aiEccGR81X5eYrNPeE4XMaAWWDYNHgrfqUnhy1
+#Public key: EOS6S1renum7v667hmwe6yYbUaTBba1QDyDCK5Z7GNMxpYcFxsyti
+cleos wallet importkey --private-key 5JjHW9MBNS5x7aiEccGR81X5eYrNPeE4XMaAWWDYNHgrfqUnhy1
+
+#account address: T17VzCrQddyUgzWhEk9AKykPhPZrEDW4ktV
+cleos new account EOS7busyMdrh7xdxCZezMsatdFu5J6zG9eQ1eD97h7AmNZphnKWcU
+#account address: T1P2cD7cBXo4fTyANmjwjwCjvoSThCHp9ma
+cleos new account EOS5fgrWNJ1PyMqbkWvdjrn4Mww5NrZ2pYqC1gzMGZcevHgm6PEKr
+#account address: T12c7HZkYAfrWZYZ4EnoXfs3ukyMNyHiQSE
+cleos new account EOS6S1renum7v667hmwe6yYbUaTBba1QDyDCK5Z7GNMxpYcFxsyti
+
+cleos transfer $AccountInvestor T17VzCrQddyUgzWhEk9AKykPhPZrEDW4ktV "200000000.0000 EOS"
+cleos transfer $AccountInvestor T1P2cD7cBXo4fTyANmjwjwCjvoSThCHp9ma "100.0000 EOS"
+cleos transfer $AccountInvestor T12c7HZkYAfrWZYZ4EnoXfs3ukyMNyHiQSE "100.0000 EOS"
+
+cleos producer delegatesource T17VzCrQddyUgzWhEk9AKykPhPZrEDW4ktV T17VzCrQddyUgzWhEk9AKykPhPZrEDW4ktV "100000000.0000 EOS" "100000000.0000 EOS"
+cleos producer delegatesource T1P2cD7cBXo4fTyANmjwjwCjvoSThCHp9ma T1P2cD7cBXo4fTyANmjwjwCjvoSThCHp9ma "50.0000 EOS" "50.0000 EOS"
+cleos producer delegatesource T12c7HZkYAfrWZYZ4EnoXfs3ukyMNyHiQSE T12c7HZkYAfrWZYZ4EnoXfs3ukyMNyHiQSE "50.0000 EOS" "50.0000 EOS"
+
+cleos producer regproducer T17VzCrQddyUgzWhEk9AKykPhPZrEDW4ktV EOS5EfU2fDgHZTNwPhuoHJgKcrNJ3PbyaYMHMrgMnBpVffWjgeJjX https://accountnum11.com
+cleos producer regproducer T1P2cD7cBXo4fTyANmjwjwCjvoSThCHp9ma EOS5EfU2fDgHZTNwPhuoHJgKcrNJ3PbyaYMHMrgMnBpVffWjgeJjX https://accountnum12.com
+cleos producer regproducer T12c7HZkYAfrWZYZ4EnoXfs3ukyMNyHiQSE EOS5EfU2fDgHZTNwPhuoHJgKcrNJ3PbyaYMHMrgMnBpVffWjgeJjX https://accountnum13.com
+
+cleos producer listproducers
+
+cleos producer voteproducers prods  T17VzCrQddyUgzWhEk9AKykPhPZrEDW4ktV T17VzCrQddyUgzWhEk9AKykPhPZrEDW4ktV T1P2cD7cBXo4fTyANmjwjwCjvoSThCHp9ma T12c7HZkYAfrWZYZ4EnoXfs3ukyMNyHiQSE
+
+cleos producer listproducers
+

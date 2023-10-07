@@ -10,9 +10,9 @@ set -x
 # echo CONTRACT_PATH is ${CONTRACT_PATH}
 
 #CONTRACT_PATH=/home/d/projects/eosio.contracts/build/contracts
-CONTRACT_PATH=/root/projects/threed/bpc-atlantis-contracts/build/contracts
+CONTRACT_PATH=/home/rc/projects/threed/bpc-atlantis-contracts/build/contracts
 #CONTRACT_BOOT_PATH=/home/d/projects/eos/contracts/contracts
-CONTRACT_BOOT_PATH=/root/projects/threed/contracts
+CONTRACT_BOOT_PATH=/home/rc/projects/threed/contracts
 
 # EOS6Kc7LVUHVxauut2rj8Rwk21mXAYpvLoNsJf3C1vFLFjhGeeHHM=KEY:5JLrjLzKiWvecrUkBBPEBm4Wt8F7ECygLNnLhhLW64fCGP5RUvH
 cleos create account eosio eosio.bpay EOS6Kc7LVUHVxauut2rj8Rwk21mXAYpvLoNsJf3C1vFLFjhGeeHHM
@@ -44,12 +44,19 @@ cleos set contract eosio ./eosio.bios
 cleos set contract eosio.token ./eosio.token/
 cleos set contract eosio.msig ./eosio.msig/
 
-cleos push action eosio.token create '[ "eosio", "3000000000.0000 SYS" ]' -p eosio.token@active
-cleos push action eosio.token issue '[ "eosio", "1000000000.0000 SYS", "memo" ]' -p eosio@active
+cleos push action eosio.token create '[ "eosio", "3000000000.0000 RC" ]' -p eosio.token@active
+cleos push action eosio.token issue '[ "eosio", "1000000000.0000 RC", "memo" ]' -p eosio@active
 echo "sleep 1 start"
 sleep 1
 echo "sleep 1 end"
 cleos set contract eosio ./eosio.system
 cleos push action eosio setpriv '["eosio.msig", 1]' -p eosio@active
-cleos push action eosio init '["0", "4,SYS"]' -p eosio@active
+cleos push action eosio init '["0", "4,RC"]' -p eosio@active
 echo "log1"
+
+#PUBKEY:EOS8BcU7CKpNggBGPKQVCyHsSuh9eLRPAd19ewrZ3dMfkRCx5iwbi  <-> PRIVATEKEY:5KBtJCov6sQdQJyUMuL4MfNxGDEM171Dj1eWz72Ngt4wj7nZdk8
+cleos system newaccount eosio --transfer accountnum11 EOS8BcU7CKpNggBGPKQVCyHsSuh9eLRPAd19ewrZ3dMfkRCx5iwbi --stake-net "100000000.0000 RC" --stake-cpu "100000000.0000 RC" --buy-ram-kbytes 8
+cleos system newaccount eosio --transfer accountnum12 EOS8BcU7CKpNggBGPKQVCyHsSuh9eLRPAd19ewrZ3dMfkRCx5iwbi --stake-net "100000000.0000 RC" --stake-cpu "100000000.0000 RC" --buy-ram-kbytes 8
+cleos system newaccount eosio --transfer accountnum13 EOS8BcU7CKpNggBGPKQVCyHsSuh9eLRPAd19ewrZ3dMfkRCx5iwbi --stake-net "100000000.0000 RC" --stake-cpu "100000000.0000 RC" --buy-ram-kbytes 8
+
+cleos transfer eosio accountnum11 "1000.0000 RC"
