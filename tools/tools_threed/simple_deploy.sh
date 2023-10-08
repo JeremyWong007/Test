@@ -204,6 +204,7 @@ do
     eval $CMD
 done
 
+cleos system buyram eosio eosio "200 RC"
 cleos system delegatebw eosio eosio "100000000.0000 RC" "100000000.0000 RC"
 cleos system voteproducer prods eosio ${ProducerNameArray[0]}
 
