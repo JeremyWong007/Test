@@ -664,7 +664,7 @@ stl_test::stl_test(/* args */)
     // test_float();
     // test_regex();
     // test_thread t_thread;
-    test_function t_function;
+    // test_function t_function;
 }
 
 stl_test::~stl_test()

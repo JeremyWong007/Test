@@ -9,8 +9,24 @@ private:
     /* data */
 public:
     test_vector(/* args */);
+    void test_vector_iter();
     ~test_vector();
 };
+
+void test_vector::test_vector_iter()
+{
+    ilog("test_vector_iter in");
+    vector<int> v{1,2,3};
+    auto it = v.begin();
+    auto a = *it;
+    ilog("a=%d", a);
+    v.push_back(4);
+    v.push_back(4);
+    v.push_back(4);
+    v.push_back(4);
+    a = *it;
+    ilog("a=%d", a);
+}
 
 test_vector::test_vector(/* args */)
 {
@@ -23,6 +39,8 @@ test_vector::test_vector(/* args */)
     vector<int> v2={1,2,3,4};
     v2.resize(5,2);
     print(v2);
+
+    test_vector_iter();
 }
 
 test_vector::~test_vector()

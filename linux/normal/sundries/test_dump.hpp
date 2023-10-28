@@ -75,7 +75,7 @@ test_dump::test_dump(/* args */)
     //    std::cout<<__FILE__<<":"<<std::dec<<__LINE__<<"  "<<__func__<<std::endl;
     //stackLimit();
     //dividZero();
-    writeToAddrZero();
+    //writeToAddrZero();
     //core_test1();
 }
 

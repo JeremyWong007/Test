@@ -1,5 +1,7 @@
 #include <memory>
 #include <iostream>
+#include "../common.h"
+#include <assert.h>
 
 using namespace std;
 
@@ -46,6 +48,23 @@ struct Good:std::enable_shared_from_this<Good>
     ~Good(){std::cout<<"Good::~Good() called"<<std::endl;}
 };
 
+void test_const_ptr(){
+    ilog("test_const_ptr in");
+    const char* p = "123";
+    const char* q = "123";
+    assert(p==q);
+    char* p1 = "123456789";
+    char* q1 = "123456789";
+    char p2[] = "123456789";
+    char q2[] = "123456789";
+    char* p3 = new char(5);
+    int len1 = sizeof(p1);
+    int len2 = sizeof(p2);
+    int len3 = sizeof(p3);
+    *p2 =9;
+    //assert(p1==q1);
+}
+
 void test_smartptr()
 {
     std::cout<<"test ptr start"<<std::endl;
@@ -57,5 +76,6 @@ void test_smartptr()
     //     std::cout << "gp1.use_count() = " << gp1.use_count() << std::endl;
     //     std::cout << "gp2.use_count() = " << gp2.use_count() << std::endl;
     // }
-    test_unique_ptr();
+    // test_unique_ptr();
+    // test_const_ptr();
 }
