@@ -8,3 +8,5 @@ go/java/
 go/pkg
 
 *.key
+
+tools/tools_gold/test/build
