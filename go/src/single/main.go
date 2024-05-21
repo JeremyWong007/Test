@@ -19,4 +19,5 @@ func main() {
 
 	b := Books{"Go 语言", "www.runoob.com", "Go 语言教程", 6495407}
 	fmt.Println(b)
+	SayHello()
 }

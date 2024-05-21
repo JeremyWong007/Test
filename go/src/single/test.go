@@ -1,6 +1,9 @@
 package main
 
-import . "nc_tools"
+import (
+	"fmt"
+	. "nc_tools"
+)
 
 /*
  * type ListNode struct{
@@ -18,4 +21,8 @@ import . "nc_tools"
  */
 func ReverseList(head *ListNode) *ListNode {
 	// write code here
+}
+
+func SayHello() {
+	fmt.Print("Hello!")
 }
