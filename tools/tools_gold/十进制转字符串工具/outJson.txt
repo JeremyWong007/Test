@@ -1,0 +1,2592 @@
+{
+  "alarm": [],
+  "capacity": {
+    "charge": {
+      "daily": 0,
+      "round": 0,
+      "total": -1
+    },
+    "charge_capacity": 0,
+    "discharge": {
+      "daily": 0,
+      "round": 0,
+      "total": -1
+    },
+    "discharge_capacity": 0
+  },
+  "charge_status": 0,
+  "cluster": [
+    {
+      "battery": [
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        },
+        {
+          "current": 0,
+          "negative_ir": 0,
+          "positive_ir": 0,
+          "r": 0,
+          "soc": 65535,
+          "soh": 65535,
+          "temperature": 65535,
+          "voltage": 65535
+        }
+      ],
+      "capacity": {
+        "charge": {
+          "daily": 0,
+          "round": 0,
+          "total": 0
+        },
+        "charge_capacity": -1,
+        "discharge": {
+          "daily": 0,
+          "round": 0,
+          "total": 0
+        },
+        "discharge_capacity": -1
+      },
+      "charge_status": false,
+      "cluster_status": 3,
+      "devstatus": {
+        "alarm": false,
+        "fault": false,
+        "online": true,
+        "run": true
+      },
+      "runtime": {
+        "current": {
+          "avg": 65535,
+          "mass": 65535,
+          "max": 65535,
+          "max_id": 0,
+          "min": 65535,
+          "min_id": 0
+        },
+        "negative_ir": {
+          "avg": 65535,
+          "mass": 65535,
+          "max": 65535,
+          "max_id": 0,
+          "min": 65535,
+          "min_id": 0
+        },
+        "positive_ir": {
+          "avg": 65535,
+          "mass": 65535,
+          "max": 65535,
+          "max_id": 0,
+          "min": 65535,
+          "min_id": 0
+        },
+        "r": {
+          "avg": 65535,
+          "mass": 65535,
+          "max": 0,
+          "max_id": 0,
+          "min": 0,
+          "min_id": 0
+        },
+        "soc": {
+          "avg": 65535,
+          "mass": 65535,
+          "max": 65535,
+          "max_id": 65535,
+          "min": 65535,
+          "min_id": 65535
+        },
+        "soh": {
+          "avg": 65535,
+          "mass": 65535,
+          "max": 65535,
+          "max_id": 65535,
+          "min": 65535,
+          "min_id": 65535
+        },
+        "temperature": {
+          "avg": 0,
+          "mass": 0,
+          "max": 65535,
+          "max_id": 65535,
+          "min": 65535,
+          "min_id": 65535
+        },
+        "voltage": {
+          "avg": 65535,
+          "mass": 65535,
+          "max": 65535,
+          "max_id": 65535,
+          "min": 65535,
+          "min_id": 65535
+        }
+      }
+    }
+  ],
+  "devstatus": {
+    "alarm": true,
+    "fault": false,
+    "online": true,
+    "run": false
+  },
+  "runtime": {
+    "current": {
+      "avg": 0,
+      "mass": 0,
+      "max": 0,
+      "max_id": 0,
+      "min": 0,
+      "min_id": 0
+    },
+    "negative_ir": {
+      "avg": 65535,
+      "mass": 65535,
+      "max": 0,
+      "max_id": 0,
+      "min": 0,
+      "min_id": 0
+    },
+    "positive_ir": {
+      "avg": 65535,
+      "mass": 65535,
+      "max": 0,
+      "max_id": 0,
+      "min": 0,
+      "min_id": 0
+    },
+    "r": {
+      "avg": 65535,
+      "mass": 65535,
+      "max": 0,
+      "max_id": 65536,
+      "min": 0,
+      "min_id": 65536
+    },
+    "soc": {
+      "avg": 65535,
+      "mass": 65535,
+      "max": 65535,
+      "max_id": 65536,
+      "min": 65535,
+      "min_id": 65536
+    },
+    "soh": {
+      "avg": 65535,
+      "mass": 65535,
+      "max": 65535,
+      "max_id": 65536,
+      "min": 65535,
+      "min_id": 65536
+    },
+    "temperature": {
+      "avg": 0,
+      "mass": 0,
+      "max": 65535,
+      "max_id": 65536,
+      "min": 65535,
+      "min_id": 65536
+    },
+    "voltage": {
+      "avg": 65535,
+      "mass": 65535,
+      "max": 65535,
+      "max_id": 65536,
+      "min": 65535,
+      "min_id": 65536
+    }
+  },
+  "signature": {
+    "display_name": "1#电池堆",
+    "id": 0,
+    "name": "stack_0",
+    "type": "BAT_STACK"
+  },
+  "stack_status": 3,
+  "ts": 1736990480000
+}

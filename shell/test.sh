@@ -224,15 +224,41 @@ function testParam(){
     echo "最后命令的退出状态：$?"
 }
 
+function testFile(){
+    echo "testFile in"
+
+    file="/home/wangyuanjing/test/shell/ww"
+     if [ -L "$file" ]; then
+    echo "$file is a symbolic link."
+    else
+    echo "$file is not a symbolic link."
+    fi
+ 
+    file="/home/wangyuanjing/test/shell/w.txt"
+    if [ -e "$file" ]; then
+    echo "$file is a symbolic link."
+    else
+    echo "$file is not a symbolic link."
+    fi
+ 
+    file="/home/wangyuanjing/test/shell/ww"
+    if [ -e "$file" ]; then
+    echo "$file is a symbolic link."
+    else
+    echo "$file is not a symbolic link."
+    fi
+}
+
 echo "============ Shell Test =========="
 
-testParam $@
-testForDo
-testSeq
-testRandom
-test_readonly
-test_array
-test_map
-test_yunsuanfu
-test_sed
-test_linux_cmd
+# testParam $@
+# testForDo
+# testSeq
+# testRandom
+# test_readonly
+# test_array
+# test_map
+# test_yunsuanfu
+# test_sed
+# test_linux_cmd
+testFile

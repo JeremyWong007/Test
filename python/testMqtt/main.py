@@ -53,7 +53,7 @@ def toggle_enable(host, user, password, database, user_id):
         enable_value = 1 - enable_value
         
         # 等待 5 秒钟
-        time.sleep(60)
+        time.sleep(30)
 
 if __name__ == "__main__":
     # 数据库连接信息

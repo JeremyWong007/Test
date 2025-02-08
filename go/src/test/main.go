@@ -4,6 +4,7 @@ import (
 	"encoding/binary"
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"sa/fetch"
 	"time"
@@ -98,6 +99,50 @@ func testMqttXj() {
 	fmt.Printf("\n")
 }
 
+type Test struct {
+	A1 float32 `json:"a1"`
+}
+
+func ParseFloat(t Test) (string, error) {
+	var s string
+	// jsonBody, _ := json.Marshal(t)
+	// s = string(jsonBody)
+	//s = strconv.FormatFloat(float64(t.A1), 'g', 10, 32)
+
+	t.A1 = float32(math.Round(float64(t.A1)*1000) / 1000)
+	s = fmt.Sprintf("%v", t.A1)
+	return s, nil
+}
+
+func testFloat() {
+	fmt.Println("testStruct start:")
+	var t Test
+	t.A1 = 0.000
+	jsonBody, _ := ParseFloat(t)
+	fmt.Println("test1: ", string(jsonBody))
+
+	t.A1 = 112233445566778899
+	jsonBody, _ = ParseFloat(t)
+	fmt.Println("test2: ", string(jsonBody))
+
+	t.A1 = 1.123456789
+	jsonBody, _ = ParseFloat(t)
+	fmt.Println("test3: ", string(jsonBody))
+
+	t.A1 = 123.123
+	jsonBody, _ = ParseFloat(t)
+	fmt.Println("test4: ", string(jsonBody))
+
+	t.A1 = 112233.123
+	jsonBody, _ = ParseFloat(t)
+	fmt.Println("test5: ", string(jsonBody))
+
+	t.A1 = 112233.11223344556677
+	jsonBody, _ = ParseFloat(t)
+	fmt.Println("test6: ", string(jsonBody))
+
+}
+
 func main() {
 	fmt.Print("Hello World!\n")
 	fetch.Hello()
@@ -113,4 +158,5 @@ func main() {
 
 	testTime()
 	testMqttXj()
+	testFloat()
 }
