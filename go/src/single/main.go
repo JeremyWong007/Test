@@ -1,23 +1,41 @@
 package main
 
-import "fmt"
+import (
+	"bytes"
+	"fmt"
+	"log"
+	"os/exec"
+	"time"
+)
 
-type Books struct {
-	title   string
-	author  string
-	subject string
-	book_id int
+func executeShellCommand(command string) (string, string, error) {
+	// 使用 exec.Command 创建一个命令
+	cmd := exec.Command("bash", "-c", command)
+
+	// 用 bytes.Buffer 捕获标准输出和标准错误
+	var stdout, stderr bytes.Buffer
+	cmd.Stdout = &stdout
+	cmd.Stderr = &stderr
+
+	// 执行命令
+	err := cmd.Run()
+
+	// 返回标准输出，标准错误和错误信息
+	return stdout.String(), stderr.String(), err
 }
 
 func main() {
-	//fmt.Print("Hello go!")
-	// a := 12
-	// b := 13
-	str := "Hello go2\n"
-	fmt.Print(str)
-	fmt.Printf(str)
+	// 示例：执行一个命令，例如 "ls -l"
+	command := "p=2; if [ \"$p\" -eq 1 ]; then echo \"p 等于 1\"; else echo \"p 不等于 1\"; fi" // 直接使用命令 "ls"，不需要额外参数
 
-	b := Books{"Go 语言", "www.runoob.com", "Go 语言教程", 6495407}
-	fmt.Println(b)
-	SayHello()
+	fmt.Printf("time1:%v", time.Now().UnixNano())
+	stdout, stderr, err := executeShellCommand(command) // 直接在命令字符串里加入参数
+	if err != nil {
+		log.Fatalf("命令执行失败：%v\n标准错误输出：%s\n", err, stderr)
+	} else {
+		fmt.Println("命令执行成功！")
+		fmt.Println("标准输出：")
+		fmt.Println(stdout)
+	}
+	fmt.Printf("time2:%v", time.Now().UnixNano())
 }

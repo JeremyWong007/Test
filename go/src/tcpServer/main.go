@@ -7,6 +7,7 @@ import (
 
 func main() {
 	listener, err := net.Listen("tcp", "192.168.11.172:50000")
+	//listener, err := net.Listen("tcp", "10.10.10.101:50000")
 	if err != nil {
 		fmt.Println("Error listening:", err.Error())
 		return
@@ -35,7 +36,8 @@ func handleConnection(conn net.Conn) {
 		fmt.Println("Error reading:", err.Error())
 		return
 	}
-	fmt.Println("Server received message:%v", buffer[:n])
+	fmt.Printf("Server received length:%d\n", n)
+	fmt.Printf("Server received message:%s\n", buffer[:n])
 
 	_, err = conn.Write(buffer[:n])
 	if err != nil {
